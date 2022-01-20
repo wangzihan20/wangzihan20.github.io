@@ -1,0 +1,234 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="王梓涵"><title>数学建模|预测方法：灰色预测模型 · 王梓涵的Blog</title><meta name="description" content="简介灰色系统理论是由华中理工大学邓聚龙教授于1982年提出并加以发展的。二十几年来，引起了不少国内外学者的关注，得到了长足的发展。目前，在我国已经成为社会、经济、科学技术在等诸多领域进行预测、决策、评估、规划控制、系统分析与建模的重要方法之一。特别是它对时间序列短、统计数据少、信息不完全系统的分析与"><meta name="keywords" content="Blog,博客,Hexo"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/images/favicon.webp"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/insight.css"><link rel="stylesheet" href="/css/search.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><meta name="generator" content="Hexo 5.4.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head><body><div class="page-top animated fadeInDown"><div class="nav"><li> <a href="/">博客主页</a></li><li> <a href="/archives">文章归档</a></li><li> <a href="/个人简历/">个人简历</a></li><li> <a href="/tags">标签</a></li><li> <a href="/about">关于</a></li><li> <a href="/links">友链</a></li><li> <a href="/test1">杂记</a></li></div><div class="information"><div class="nav_right_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li><li><a class="fa fa-search" onclick="openWindow();"></a></li></div><div class="avatar"><img src="/images/logo.webp"></div></div></div><div class="sidebar animated fadeInDown"><div class="sidebar-top"><div class="logo-title"><div class="title"><img src="/images/logo@2x.webp" style="width:200px;" alt="favicon"><h3 title=""><a href="/">王梓涵的Blog</a></h3><div class="description"><p>一个日常记录学习的blog……</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com"><i class="fa fa-github"></i></a></li><li><a href="mailto:2018952617@qq.com"><i class="fa fa-envelope"></i></a></li><li><a target="_blank" rel="noopener" href="http://sighttp.qq.com/authd?IDKEY=https://user.qzone.qq.com/2018952617/infocenter"><i class="fa fa-qq"></i></a></li><li><a target="_blank" rel="noopener" href="https://zhihu.com"><i class="fa fa-mortar-board"></i></a></li></ul></div></div><div class="footer"><div class="p"> <span> 全站CC-BY-SA-3.0 </span><i class="fa fa-star"></i><span> 王梓涵</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><span>Anatolo </span></div><div class="beian"></div></div></div><div class="main"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>数学建模|预测方法：灰色预测模型</a></h3></div><div class="post-content"><p><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>灰色系统理论是由华中理工大学邓聚龙教授于1982年提出并加以发展的。二十几年来，引起了不少国内外学者的关注，得到了长足的发展。目前，在我国已经成为社会、经济、科学技术在等诸多领域进行预测、决策、评估、规划控制、系统分析与建模的重要方法之一。特别是它对时间序列短、统计数据少、信息不完全系统的分析与建模，具有独特的功效，因此得到了广泛的应用.</p>
+<h3 id="适用范围"><a href="#适用范围" class="headerlink" title="适用范围"></a>适用范围</h3><p>该模型使用的不是原始数据的序列，而是生成的数据序列。核心体系是Grey Model，即对原始数据作累加生成（或其他处理生成）得到近似的指数规律再进行建模的方法。</p>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>在处理较少的特征值数据，不需要数据的样本空间足够大，就能解决历史数据少、序列的完整性以及可靠性低的问题，能将无规律的原始数据进行生成得到规律较强的生成序列。</p>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>只适用于中短期的预测，只适合近似于指数增长的预测。</p>
+<h3 id="灰色系统"><a href="#灰色系统" class="headerlink" title="灰色系统"></a>灰色系统</h3><p>灰色系统是黑箱概念的一种推广。<br>我们把既含有已知信息又含有未知信息的系统称为灰色系统，作为两个极端，我们将称信息完全未确定的系统为黑色系统;称信息完全确定的系统为白色系统。区别白色系统与黑色系统的重标志是系统各因素之间是否具有确定的关系。</p>
+<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><ul>
+<li><ol>
+<li>用灰色数学处理不确定量，使之量化.</li>
+</ol>
+</li>
+<li><ol>
+<li>充分利用已知信息寻求系统的运动规律.</li>
+</ol>
+</li>
+<li><ol>
+<li>灰色系统理论能处理贫信息系统.</li>
+</ol>
+</li>
+</ul>
+<h3 id="灰色生成"><a href="#灰色生成" class="headerlink" title="灰色生成"></a>灰色生成</h3><p>将原始数据列中的数据，按某种要求作数据处理称为生成。客观世界尽管复杂，表述其行为的数据可能是杂乱无章的，然而它必然是有序的，都存在着某种内在规律，不过这些规律被纷繁复杂的现象所掩盖，人们很难直接从原始数据中找到某种内在的规律。对原始数据的生成就是企图从杂乱无章的现象中去发现内在规律。</p>
+<h4 id="常用灰色系统生成方式"><a href="#常用灰色系统生成方式" class="headerlink" title="常用灰色系统生成方式"></a>常用灰色系统生成方式</h4><ul>
+<li><ol>
+<li>累加生成</li>
+</ol>
+</li>
+<li><ol>
+<li>累减生成</li>
+</ol>
+</li>
+<li><ol>
+<li>均值生成</li>
+</ol>
+</li>
+<li><ol>
+<li>级比生成</li>
+</ol>
+</li>
+<li>……</li>
+</ul>
+<h3 id="累加生成"><a href="#累加生成" class="headerlink" title="累加生成"></a>累加生成</h3><p>累加生成，<strong>即通过数列间各时刻数据的依个累加以得到新的数据与数列。</strong>累加前的数列称原始数列，累加后的数列称为生成数列。累加生成是使灰色过程由灰变白的一种方法，它在灰色系统理论中占有极其重要地位，通过累加生成可以看出灰量积累过程的发展态势,使离乱的原始数据中蕴含的积分特性或规律加以显化。累加生成是对原始数据列中各时刻的数据依次累加，从而生成新的序列的一种手。</p>
+<img src="/2022/01/18/jm7/1.png" class>
+<img src="/2022/01/18/jm7/2.png" class>
+<h2 id="GM-1-1-预测模型"><a href="#GM-1-1-预测模型" class="headerlink" title="GM(1,1)预测模型"></a>GM(1,1)预测模型</h2><h3 id="推导"><a href="#推导" class="headerlink" title="推导"></a>推导</h3><img src="/2022/01/18/jm7/3.png" class>
+<img src="/2022/01/18/jm7/4.png" class>
+<img src="/2022/01/18/jm7/5.png" class>
+<img src="/2022/01/18/jm7/6.png" class>
+<img src="/2022/01/18/jm7/7.png" class>
+<img src="/2022/01/18/jm7/8.png" class>
+<h3 id="精度检验"><a href="#精度检验" class="headerlink" title="精度检验"></a>精度检验</h3><p>模型选定之后，一定要经过检验才能判定其是否合理，只有通过检验的模型才能用来作预测。<br>灰色模型的精度检验一般有三种方法:</p>
+<ul>
+<li>相对误差大小检验法</li>
+<li>关联度检验法</li>
+<li>后验差检验法</li>
+</ul>
+<p>下面主要介绍后验差检验法</p>
+<img src="/2022/01/18/jm7/9.png" class>
+<img src="/2022/01/18/jm7/10.png" class>
+<img src="/2022/01/18/jm7/11.png" class>
+<h3 id="精度检验等级参照表"><a href="#精度检验等级参照表" class="headerlink" title="精度检验等级参照表"></a>精度检验等级参照表</h3><img src="/2022/01/18/jm7/12.png" class>
+<h3 id="算法总结"><a href="#算法总结" class="headerlink" title="算法总结"></a>算法总结</h3><h4 id="主要步骤"><a href="#主要步骤" class="headerlink" title="主要步骤"></a>主要步骤</h4><ul>
+<li><ol>
+<li>累加生成</li>
+</ol>
+</li>
+<li><ol>
+<li>建立GM（1，1）模型</li>
+</ol>
+</li>
+<li><ol>
+<li>检验预测值</li>
+</ol>
+</li>
+</ul>
+<h2 id="Matlab代码"><a href="#Matlab代码" class="headerlink" title="Matlab代码"></a>Matlab代码</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="params">[]</span>=<span class="title">greymodel</span><span class="params">(y)</span></span></span><br><span class="line"><span class="comment">% 本程序主要用来计算根据灰色理论建立的模型的预测值。</span></span><br><span class="line"><span class="comment">% 应用的数学模型是 GM(1,1)。</span></span><br><span class="line"><span class="comment">% 原始数据的处理方法是一次累加法。</span></span><br><span class="line">y=input(<span class="string">'请输入数据 '</span>);</span><br><span class="line">n=<span class="built_in">length</span>(y);</span><br><span class="line">yy=<span class="built_in">ones</span>(n,<span class="number">1</span>);</span><br><span class="line">yy(<span class="number">1</span>)=y(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">2</span>:n</span><br><span class="line">    yy(<span class="built_in">i</span>)=yy(<span class="built_in">i</span><span class="number">-1</span>)+y(<span class="built_in">i</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">B=<span class="built_in">ones</span>(n<span class="number">-1</span>,<span class="number">2</span>);</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:(n<span class="number">-1</span>)</span><br><span class="line">    B(<span class="built_in">i</span>,<span class="number">1</span>)=-(yy(<span class="built_in">i</span>)+yy(<span class="built_in">i</span>+<span class="number">1</span>))/<span class="number">2</span>;</span><br><span class="line">    B(<span class="built_in">i</span>,<span class="number">2</span>)=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">BT=B';</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">j</span>=<span class="number">1</span>:n<span class="number">-1</span></span><br><span class="line">    YN(<span class="built_in">j</span>)=y(<span class="built_in">j</span>+<span class="number">1</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">YN=YN';</span><br><span class="line">A=inv(BT*B)*BT*YN;</span><br><span class="line">a=A(<span class="number">1</span>);</span><br><span class="line">u=A(<span class="number">2</span>);</span><br><span class="line">t=u/a;</span><br><span class="line"><span class="built_in">i</span>=<span class="number">1</span>:n+<span class="number">2</span>;</span><br><span class="line">yys(<span class="built_in">i</span>+<span class="number">1</span>)=(y(<span class="number">1</span>)-t).*<span class="built_in">exp</span>(-a.*<span class="built_in">i</span>)+t;</span><br><span class="line">yys(<span class="number">1</span>)=y(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">j</span>=n+<span class="number">2</span>:<span class="number">-1</span>:<span class="number">2</span></span><br><span class="line">    ys(<span class="built_in">j</span>)=yys(<span class="built_in">j</span>)-yys(<span class="built_in">j</span><span class="number">-1</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">x=<span class="number">1</span>:n;</span><br><span class="line">xs=<span class="number">2</span>:n+<span class="number">2</span>;</span><br><span class="line">yn=ys(<span class="number">2</span>:n+<span class="number">2</span>);</span><br><span class="line"><span class="built_in">plot</span>(x,y,<span class="string">'^r'</span>,xs,yn,<span class="string">'*-b'</span>);</span><br><span class="line">det=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">sum1=<span class="number">0</span>;</span><br><span class="line">sumpe=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:n</span><br><span class="line">    sumpe=sumpe+y(<span class="built_in">i</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">pe=sumpe/n;</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:n;</span><br><span class="line">    sum1=sum1+(y(<span class="built_in">i</span>)-pe).^<span class="number">2</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">s1=<span class="built_in">sqrt</span>(sum1/n);</span><br><span class="line">sumce=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">2</span>:n</span><br><span class="line">    sumce=sumce+(y(<span class="built_in">i</span>)-yn(<span class="built_in">i</span>));</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">ce=sumce/(n<span class="number">-1</span>);</span><br><span class="line">sum2=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">2</span>:n;</span><br><span class="line">    sum2=sum2+(y(<span class="built_in">i</span>)-yn(<span class="built_in">i</span>)-ce).^<span class="number">2</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">s2=<span class="built_in">sqrt</span>(sum2/(n<span class="number">-1</span>));</span><br><span class="line">c=(s2)/(s1);</span><br><span class="line"><span class="built_in">disp</span>([<span class="string">'后验差比值为：'</span>,num2str(c)]);</span><br><span class="line"><span class="keyword">if</span> c&lt;<span class="number">0.35</span></span><br><span class="line">    <span class="built_in">disp</span>(<span class="string">'系统预测精度好'</span>)</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> c&lt;<span class="number">0.5</span></span><br><span class="line">        <span class="built_in">disp</span>(<span class="string">'系统预测精度合格'</span>)</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> c&lt;<span class="number">0.65</span></span><br><span class="line">            <span class="built_in">disp</span>(<span class="string">'系统预测精度勉强'</span>)</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">disp</span>(<span class="string">'系统预测精度不合格'</span>)</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">            </span><br><span class="line"><span class="built_in">disp</span>([<span class="string">'下个拟合值为 '</span>,num2str(ys(n+<span class="number">1</span>))]);</span><br><span class="line"><span class="built_in">disp</span>([<span class="string">'再下个拟合值为'</span>,num2str(ys(n+<span class="number">2</span>))]);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="实际案例"><a href="#实际案例" class="headerlink" title="实际案例"></a>实际案例</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">724.57</span>, <span class="number">746.62</span>, <span class="number">778.27</span>, <span class="number">800.8</span>, <span class="number">827.75</span>,<span class="number">871.1</span>, <span class="number">912.37</span>, <span class="number">954.28</span>, <span class="number">995.01</span>, <span class="number">1037.2</span>]</span><br><span class="line"></span><br><span class="line">[<span class="number">2.874</span>,<span class="number">3.278</span>,<span class="number">3.337</span>,<span class="number">3.390</span>,<span class="number">3.679</span>]</span><br></pre></td></tr></table></figure>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/jtys2016/article/details/86632057?utm_source=app&amp;app_version=4.18.0&amp;code=app_1562916241&amp;uLinkId=usr1mkqgl919blen">数学建模之灰色预测实例含代码(城市交通噪声的例子)</a></p>
+</blockquote>
+<h2 id="GM-2-1-、DGM-2-1-模型、Verhulst模型"><a href="#GM-2-1-、DGM-2-1-模型、Verhulst模型" class="headerlink" title="GM(2,1)、DGM(2,1)模型、Verhulst模型"></a>GM(2,1)、DGM(2,1)模型、Verhulst模型</h2><p>GM(1，1)模型适用于较强指数规律的序列，只能描述单调的变化过程，对于非单调的摆动发展序列或者有饱和的S形序列，可以考虑建立GM(2，1)、DGM、Verhulst模型。</p>
+<h3 id="GM-2-1-模型"><a href="#GM-2-1-模型" class="headerlink" title="GM(2,1)模型"></a>GM(2,1)模型</h3><img src="/2022/01/18/jm7/25.png" class>
+<h4 id="弱化算子"><a href="#弱化算子" class="headerlink" title="弱化算子"></a>弱化算子</h4><p><strong>对于初期增长势头过于猛烈的模型，为了提高精度，可以考虑使用弱化算子处理原始数列。</strong></p>
+<img src="/2022/01/18/jm7/26.png" class>
+<p>对应的，依旧是最小二乘估计参数，再对微分方程求解，得到</p>
+<img src="/2022/01/18/jm7/27.png" class>
+<img src="/2022/01/18/jm7/28.png" class>
+<img src="/2022/01/18/jm7/29.png" class>
+<h3 id="DGM模型建立"><a href="#DGM模型建立" class="headerlink" title="DGM模型建立"></a>DGM模型建立</h3><img src="/2022/01/18/jm7/22.png" class>
+<img src="/2022/01/18/jm7/23.png" class>
+<img src="/2022/01/18/jm7/24.png" class>
+<h3 id="Verhulst预测模型"><a href="#Verhulst预测模型" class="headerlink" title="Verhulst预测模型"></a>Verhulst预测模型</h3><h4 id="Verhulst模型的定义如下"><a href="#Verhulst模型的定义如下" class="headerlink" title="Verhulst模型的定义如下"></a>Verhulst模型的定义如下</h4><img src="/2022/01/18/jm7/13.png" class>
+<h4 id="对于模型参数，使用最小二乘估计有以下结果"><a href="#对于模型参数，使用最小二乘估计有以下结果" class="headerlink" title="对于模型参数，使用最小二乘估计有以下结果"></a>对于模型参数，使用最小二乘估计有以下结果</h4><img src="/2022/01/18/jm7/14.png" class>
+<h4 id="最终，可以求得灰色Verhulst的解为"><a href="#最终，可以求得灰色Verhulst的解为" class="headerlink" title="最终，可以求得灰色Verhulst的解为"></a>最终，可以求得灰色Verhulst的解为</h4><img src="/2022/01/18/jm7/15.png" class>
+<img src="/2022/01/18/jm7/16.png" class>
+<h4 id="Verhulst模型应用：道路交通事故预测"><a href="#Verhulst模型应用：道路交通事故预测" class="headerlink" title="Verhulst模型应用：道路交通事故预测"></a>Verhulst模型应用：道路交通事故预测</h4><img src="/2022/01/18/jm7/17.png" class>
+<p><strong>对于交通事故死亡人数统计数据，我们首先做出大体曲线变化图，以从整体上着手</strong></p>
+<img src="/2022/01/18/jm7/18.png" class>
+<p><strong>可见曲线呈现S型，考虑使用verhulst建模。建模过程如下</strong></p>
+<img src="/2022/01/18/jm7/19.png" class>
+<img src="/2022/01/18/jm7/20.png" class>
+<p>最后我们还要进行一步模型精度检验。灰色模型有一套具体的检验标准，后注。</p>
+<p>检验三个指标：<strong>相对误差、绝对关联度、均方差比值。</strong>利用MATLAB检验结果如下：</p>
+<img src="/2022/01/18/jm7/21.png" class>
+<p>可见：</p>
+<p>平均相对误差为 3.74%  ，则模型精度为二级；同时算得绝对关联度 g 为 0.9845，<br>均方差比值 C 为 0.2355，则模型精度为一级，可见模型精度较高，可用于事故预测。</p>
+<h4 id="Matlab程序"><a href="#Matlab程序" class="headerlink" title="Matlab程序"></a>Matlab程序</h4><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">clc,clear</span><br><span class="line">x1=[<span class="number">4.93</span> <span class="number">5.33</span> <span class="number">5.87</span> <span class="number">6.35</span> <span class="number">6.63</span> <span class="number">7.15</span> <span class="number">7.37</span>...</span><br><span class="line"><span class="number">7.39</span> <span class="number">7.81</span> <span class="number">8.35</span> <span class="number">9.39</span> <span class="number">10.59</span> <span class="number">10.94</span> <span class="number">10.44</span>];</span><br><span class="line">n = <span class="built_in">length</span>(x1);</span><br><span class="line">nian=<span class="number">1990</span>:<span class="number">2003</span>;</span><br><span class="line"><span class="built_in">plot</span>(nian,x1,<span class="string">'o-'</span>);</span><br><span class="line">x0=diff(x1); <span class="comment">%作累减生成</span></span><br><span class="line">x0=[x1(<span class="number">1</span>),x0]</span><br><span class="line">z1=<span class="number">0.5</span>*(x1(<span class="number">2</span>:n)+x1(<span class="number">1</span>:n<span class="number">-1</span>)) <span class="comment">%求紧邻均值生成序列</span></span><br><span class="line">B=[-z1',z1'.^<span class="number">2</span>]</span><br><span class="line">Y=x0(<span class="number">2</span>:<span class="keyword">end</span>)'</span><br><span class="line">ab_hat=B\Y <span class="comment">%估计参数 a,b 的值</span></span><br><span class="line">x=dsolve(<span class="string">'Dx+a*x=b*x^2'</span>,<span class="string">'x(0)=x0'</span>); <span class="comment">%求解常微分方程</span></span><br><span class="line">x=subs(x,{<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'x0'</span>},{ab_hat(<span class="number">1</span>),ab_hat(<span class="number">2</span>),x1(<span class="number">1</span>)}); <span class="comment">%代入参数值</span></span><br><span class="line">yuce=subs(x,<span class="string">'t'</span>,<span class="number">0</span>:<span class="number">14</span>) <span class="comment">%计算预测值</span></span><br><span class="line"><span class="comment">%下面显示微分方程的解，为了提高计算精度，把该语句放在计算预测值之后</span></span><br><span class="line">x=vpa(x,<span class="number">6</span>)</span><br><span class="line">x1_all=[x1,<span class="number">9.92</span>,<span class="number">10.71</span>]; <span class="comment">%加上 2004 年的两个观测值</span></span><br><span class="line">yuce(<span class="number">16</span>)=yuce(<span class="number">15</span>); <span class="comment">%2004 年有两个观测值，要对应两个相同的预测值</span></span><br><span class="line">epsilon=x1_all-yuce <span class="comment">%计算残差</span></span><br><span class="line">delta=<span class="built_in">abs</span>(epsilon./x1_all) <span class="comment">%计算相对误差</span></span><br><span class="line">delta_mean=<span class="built_in">mean</span>(delta) <span class="comment">%计算平均相对误差</span></span><br><span class="line">x1_all_0=x1_all-x1_all(<span class="number">1</span>); <span class="comment">%观测值数据列的始点零化像</span></span><br><span class="line">yuce_0=yuce-yuce(<span class="number">1</span>); <span class="comment">%预测值数据列的始点零化像</span></span><br><span class="line">s0=<span class="built_in">abs</span>(sum(x1_all_0(<span class="number">2</span>:<span class="keyword">end</span><span class="number">-1</span>))+<span class="number">0.5</span>*x1_all_0(<span class="keyword">end</span>));</span><br><span class="line">s1=<span class="built_in">abs</span>(sum(yuce_0(<span class="number">2</span>:<span class="keyword">end</span><span class="number">-1</span>))+<span class="number">0.5</span>*yuce_0(<span class="keyword">end</span>));</span><br><span class="line">tt=yuce_0-x1_all_0;</span><br><span class="line">s1_s0=<span class="built_in">abs</span>(sum(tt(<span class="number">2</span>:<span class="keyword">end</span><span class="number">-1</span>))+<span class="number">0.5</span>*tt(<span class="keyword">end</span>));</span><br><span class="line">absdegree=(<span class="number">1</span>+s0+s1)/(<span class="number">1</span>+s0+s1+s1_s0) <span class="comment">%计算灰色绝对关联度</span></span><br><span class="line">c=std(epsilon,<span class="number">1</span>)/std(x1_all,<span class="number">1</span>) <span class="comment">%计算标准差比值</span></span><br></pre></td></tr></table></figure>
+<h2 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_25601345/article/details/107745041?utm_source=app&amp;app_version=4.18.0&amp;code=app_1562916241&amp;uLinkId=usr1mkqgl919blen">【数学建模】灰色预测模型（预测）</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_30426957/article/details/97771835?utm_source=app&amp;app_version=4.18.0&amp;code=app_1562916241&amp;uLinkId=usr1mkqgl919blen">【数学建模】灰色系统理论II-Verhulst建模-GM(1,N)-GM(2,1)建模</a></p>
+</blockquote>
+</p><div class="tip">本文采用CC-BY-SA-3.0协议，转载请注明出处<br>Author: 王梓涵</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2022-01-18</span><i class="fa fa-tag"></i><a class="tag" href="/tags/数学建模/" title="数学建模">数学建模 </a><span class="leancloud_visitors"></span><span>About2069words, 6min53secread</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,https://wangzihan20.github.io/2022/01/18/jm7/,王梓涵的Blog,数学建模|预测方法：灰色预测模型,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2022/01/18/jm8/" title="数学建模|预测方法：差分方程">Post Anterior</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2022/01/18/jm6/" title="数学建模|预测方法：微分方程">Próximo post</a></li></ul></div><script src="/js/visitors.js"></script><a id="comments"></a><div id="vcomments" style="margin:0 30px;"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//cdn.jsdelivr.net/gh/xcss/valine@latest/dist/Valine.min.js"></script><script>var valine = new Valine({
+  el:'#vcomments',
+  notify:false || false, 
+  verify:false|| false, 
+  app_id:'MHBF2e7yy2pSKFS6UAwUMxcW-gzGzoHsz',
+  app_key:'n7EU7557kB8wtS17f6czpfGe',
+  placeholder:'请开始你的表演，请文明发言哦！',
+  path: window.location.pathname,
+  serverURLs: '',
+  visitor:true,
+  recordIP:true,
+  avatar:'retro'
+})</script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"Posts",PAGES:"Pages",CATEGORIES:"Categories",TAGS:"Tags",UNTITLED:"(Untitled)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Search..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
