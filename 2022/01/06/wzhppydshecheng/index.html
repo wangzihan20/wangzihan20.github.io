@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
   <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"wangzihan20.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"wangzihan20.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 <meta name="description" content="假设——以水平面为参考系 假设一定高度的人以一定的角度抛出一铅球求该铅球的最远射程  设运动员出手高度为h 出手角度为 出手速度为v 铅球达到最高点时间 从最高点下落到水平面的时间为 总时间 水平方向路程 忽略空气阻力 不考虑展臂动作带来的误差  求解过程 1.将初速度分解：   2.铅球从开始抛出到最高点时间：  3.铅球最高点处到抛出位置的垂直高度：  4.铅球从最">
 <meta property="og:type" content="article">
 <meta property="og:title" content="有关抛射角度对铅球射程的影响的研究">
@@ -465,7 +465,6 @@ mjx-container[display="true"] + br {
 
 
 
-    <div class="comments gitalk-container"></div>
 </div>
   </main>
 
@@ -541,28 +540,6 @@ mjx-container[display="true"] + br {
   <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
-
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"wangzihan20","repo":"bolgcomments","client_id":"90c7e80b24ef405b11bf","client_secret":"c6308e53c462c733ed873e9200d2ae25e28d84d2","admin_user":"wangzihan20","distraction_free_mode":true,"language":null,"js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"e2ba1fb202edc12d86437e9f09ca391a"}</script>
-<script src="/js/third-party/comments/gitalk.js"></script>
-<link rel="stylesheet" href="[object Object]">
-
-<script>
-  NexT.utils.getScript('[object Object]', () => {
-    var gitalk = new Gitalk({
-      clientID: '90c7e80b24ef405b11bf',
-      clientSecret: 'c6308e53c462c733ed873e9200d2ae25e28d84d2',
-      repo: 'bolgcomments',
-      owner: 'wangzihan20',
-      admin: ['wangzihan20'],
-      id: 'e2ba1fb202edc12d86437e9f09ca391a',
-        language: '',
-      distractionFreeMode: 'true'
-    });
-    gitalk.render('gitalk-container');
-  }, window.Gitalk);
-</script>
 
 
 </body>
