@@ -443,8 +443,26 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":null,"repo":null,"client_id":null,"client_secret":null,"admin_user":null,"distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"d719744ba16fb38a1bfecaacbe942504"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"wangzihan20","repo":"bolgcomments","client_id":"90c7e80b24ef405b11bf","client_secret":"c6308e53c462c733ed873e9200d2ae25e28d84d2","admin_user":"wangzihan20","distraction_free_mode":true,"language":null,"js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"d719744ba16fb38a1bfecaacbe942504"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
+<link rel="stylesheet" href="[object Object]">
+
+<script>
+  NexT.utils.getScript('[object Object]', () => {
+    var gitalk = new Gitalk({
+      clientID: '90c7e80b24ef405b11bf',
+      clientSecret: 'c6308e53c462c733ed873e9200d2ae25e28d84d2',
+      repo: 'bolgcomments',
+      owner: 'wangzihan20',
+      admin: ['wangzihan20'],
+      id: 'd719744ba16fb38a1bfecaacbe942504',
+        language: '',
+      distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+</script>
+
 
 </body>
 </html>
