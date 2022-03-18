@@ -22,12 +22,12 @@
   <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"wangzihan20.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="手机端打卡脚本 利用脚本实现手机端的企业微信或是微信小程序自动打卡。 环境搭建  1.下载Auto.js软件，官方网站是要付费的，但是一般的下载网站上是免费的，官网功能稍微多一点，这里不论是官网还是下载网站上的软件都可以用。软件如图：  2.下载vscode，在拓展组件里搜索autojs，安装如图所示的插件，此插件是连接手机和电脑的，用电脑写一些脚本比手机上写方便，电脑端也可以直接测试">
+<meta name="description" content="手机端打卡脚本 利用脚本实现手机端的企业微信或是微信小程序自动打卡。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="企业微信打卡脚本教程">
 <meta property="og:url" content="https://wangzihan20.github.io/2022/02/07/Punch/index.html">
 <meta property="og:site_name" content="王梓涵的Blog">
-<meta property="og:description" content="手机端打卡脚本 利用脚本实现手机端的企业微信或是微信小程序自动打卡。 环境搭建  1.下载Auto.js软件，官方网站是要付费的，但是一般的下载网站上是免费的，官网功能稍微多一点，这里不论是官网还是下载网站上的软件都可以用。软件如图：  2.下载vscode，在拓展组件里搜索autojs，安装如图所示的插件，此插件是连接手机和电脑的，用电脑写一些脚本比手机上写方便，电脑端也可以直接测试">
+<meta property="og:description" content="手机端打卡脚本 利用脚本实现手机端的企业微信或是微信小程序自动打卡。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://wangzihan20.github.io/2022/02/07/Punch/1.jpg">
 <meta property="og:image" content="https://wangzihan20.github.io/2022/02/07/Punch/2.png">
@@ -35,7 +35,7 @@
 <meta property="og:image" content="https://wangzihan20.github.io/2022/02/07/Punch/3.jpg">
 <meta property="og:image" content="https://wangzihan20.github.io/2022/02/07/Punch/4.jpg">
 <meta property="article:published_time" content="2022-02-07T14:28:57.000Z">
-<meta property="article:modified_time" content="2022-02-07T15:34:10.838Z">
+<meta property="article:modified_time" content="2022-03-18T08:51:27.553Z">
 <meta property="article:author" content="王梓涵">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://wangzihan20.github.io/2022/02/07/Punch/1.jpg">
@@ -168,6 +168,12 @@
       <span class="links-of-author-item">
         <a href="https://plus.google.com/" title="Google → https:&#x2F;&#x2F;plus.google.com" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
       </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/CODE_WangZIli?spm=1000.2115.3001.5343" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;CODE_WangZIli?spm&#x3D;1000.2115.3001.5343" rel="noopener" target="_blank"><i class="fa fa-anchor fa-fw"></i>CSDN</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
   </div>
 
 
@@ -226,9 +232,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-02-07 22:28:57 / 修改时间：23:34:10" itemprop="dateCreated datePublished" datetime="2022-02-07T22:28:57+08:00">2022-02-07</time>
+      <time title="创建时间：2022-02-07 22:28:57" itemprop="dateCreated datePublished" datetime="2022-02-07T22:28:57+08:00">2022-02-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-03-18 16:51:27" itemprop="dateModified" datetime="2022-03-18T16:51:27+08:00">2022-03-18</time>
     </span>
 
   
@@ -272,6 +284,7 @@
     <div class="post-body" itemprop="articleBody">
         <h2 id="手机端打卡脚本">手机端打卡脚本</h2>
 <p>利用脚本实现手机端的企业微信或是微信小程序自动打卡。</p>
+<span id="more"></span>
 <h3 id="环境搭建">环境搭建</h3>
 <ul>
 <li><p>1.下载Auto.js软件，官方网站是要付费的，但是一般的下载网站上是免费的，官网功能稍微多一点，这里不论是官网还是下载网站上的软件都可以用。软件如图：</p>
@@ -331,6 +344,8 @@
     
     
     
+
+
 
     <footer class="post-footer">
           
@@ -428,6 +443,7 @@
   </footer>
 
   
+  <script size="300" alpha="0.6" zIndex="-1" src="https://cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
@@ -465,5 +481,11 @@ document.addEventListener('page:loaded', () => {
 });
 </script>
 
-</body>
+  
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
 </html>
