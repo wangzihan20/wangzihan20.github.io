@@ -2774,6 +2774,7 @@ mjx-container[display='true'] + br {
   position: sticky;
   top: 12px;
   width: 240px;
+  visibility: hidden;
 }
 @media (max-width: 991px) {
   .sidebar {
@@ -2846,7 +2847,7 @@ mjx-container[display='true'] + br {
 .main-inner > .tabs-comment,
 .main-inner > .comments,
 .main-inner > .pagination {
-  background: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.5);
   border-radius: initial;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
 }
@@ -2928,13 +2929,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
-  content: " ";
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: -2;
+  background-attachment: fixed;
 }
 .post {
   margin-top: 60px;
