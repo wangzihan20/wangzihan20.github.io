@@ -22,25 +22,28 @@
   <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"wangzihan20.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="问题背景1  一辆汽车加满油后可以行驶n公里，旅途中有加油站，设计一个有效算法，指出应在哪些加油站停靠加油，使沿途加油次数最少。 测试用例：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="py-num-pandas3">
-<meta property="og:url" content="https://wangzihan20.github.io/2022/01/20/py-num-pandas3/index.html">
+<meta property="og:title" content="DP|贪心五例">
+<meta property="og:url" content="https://wangzihan20.github.io/2022/04/06/dp1/index.html">
 <meta property="og:site_name" content="王梓涵的Blog">
+<meta property="og:description" content="问题背景1  一辆汽车加满油后可以行驶n公里，旅途中有加油站，设计一个有效算法，指出应在哪些加油站停靠加油，使沿途加油次数最少。 测试用例：">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-01-20T09:10:18.000Z">
-<meta property="article:modified_time" content="2022-01-20T09:10:19.003Z">
+<meta property="article:published_time" content="2022-04-06T15:39:10.000Z">
+<meta property="article:modified_time" content="2022-04-06T16:00:01.388Z">
 <meta property="article:author" content="王梓涵">
+<meta property="article:tag" content="算法设计">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://wangzihan20.github.io/2022/01/20/py-num-pandas3/">
+<link rel="canonical" href="https://wangzihan20.github.io/2022/04/06/dp1/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://wangzihan20.github.io/2022/01/20/py-num-pandas3/","path":"2022/01/20/py-num-pandas3/","title":"py-num-pandas3"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://wangzihan20.github.io/2022/04/06/dp1/","path":"2022/04/06/dp1/","title":"DP|贪心五例"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>py-num-pandas3 | 王梓涵的Blog</title>
+<title>DP|贪心五例 | 王梓涵的Blog</title>
   
 
 
@@ -232,7 +235,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://wangzihan20.github.io/2022/01/20/py-num-pandas3/">
+    <link itemprop="mainEntityOfPage" href="https://wangzihan20.github.io/2022/04/06/dp1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/favicon-32x32-next.png">
@@ -245,7 +248,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          py-num-pandas3
+          DP|贪心五例
         </h1>
 
         <div class="post-meta-container">
@@ -255,9 +258,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-01-20 17:10:18 / 修改时间：17:10:19" itemprop="dateCreated datePublished" datetime="2022-01-20T17:10:18+08:00">2022-01-20</time>
+      <time title="创建时间：2022-04-06 23:39:10" itemprop="dateCreated datePublished" datetime="2022-04-06T23:39:10+08:00">2022-04-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-07 00:00:01" itemprop="dateModified" datetime="2022-04-07T00:00:01+08:00">2022-04-07</time>
     </span>
 
   
@@ -269,8 +278,8 @@
     </span>
     <span class="post-meta-item-text">Valine：</span>
   
-    <a title="valine" href="/2022/01/20/py-num-pandas3/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/01/20/py-num-pandas3/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/04/06/dp1/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/04/06/dp1/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -281,7 +290,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>0</span>
+      <span>1.6k</span>
     </span>
     <span class="post-meta-item" title="估计阅读时长">
       <span class="post-meta-item-icon">
@@ -299,7 +308,30 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        
+        <center>
+<big><big><big><b><font face="kaiti">问题背景1</font></b></big></big></big>
+</center>
+一辆汽车加满油后可以行驶n公里，旅途中有加油站，设计一个有效算法，指出应在哪些加油站停靠加油，使沿途加油次数最少。 测试用例： <span id="more"></span> 7 7 （n k） 1 2 3 4 5 1 6 6（第k个加油站与第k-1个加油站之间的距离，其中第一个代表起点，最后一个代表终点。） 输出： 4（最少加油次数）
+<center>
+<big><big><big><b><font face="kaiti">解题思路1</font></b></big></big></big>
+</center>
+  只需要考虑能否到下一个站的情况下还能否到达下下个站，如果可以则在下下个站继续判断是否还可以走，如果不可以情况则是（只能经过一个站，并在那个站加油）又或者是经过两个站不能到达第三个站，则在第二个站进行加油。
+<center>
+<big><big><big><b><font face="kaiti">代码实现1</font></b></big></big></big>
+</center>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">int</span> k;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">1001</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;请输入加满油能跑的距离以及有多少个加油站：&quot;</span> &lt;&lt; endl;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; k;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;请依次输入两个加油站的距离：&quot;</span> &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= k + <span class="number">1</span>;i++)</span><br><span class="line">        cin &gt;&gt; a[i];</span><br><span class="line">    <span class="keyword">int</span> s = <span class="number">0</span>;   <span class="comment">//判断接下来路程相加是否大于n</span></span><br><span class="line">    <span class="keyword">int</span> c = <span class="number">0</span>;  <span class="comment">//加油次数</span></span><br><span class="line">    <span class="keyword">int</span> t = <span class="number">0</span>;  <span class="comment">//标记走过的路程</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt;= k + <span class="number">1</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        s += a[i + <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">if</span> (s &gt; n)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (a[i + <span class="number">1</span>] &gt; n)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                c++;</span><br><span class="line">                s = a[i + <span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        t += <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (t == k + <span class="number">2</span>)</span><br><span class="line">        cout &lt;&lt;<span class="string">&quot;最少加油次数：&quot;</span> &lt;&lt; c &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;错误&quot;</span> &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<center>
+<big><big><big><b><font face="kaiti">问题背景2</font></b></big></big></big>
+</center>
+假设1元、2元、5元、10元、20元、50元、100元的纸币分别有3、2、2、1、2、3、5张。现在要用这些钱来支付K元，至少要用多少张纸币？
+<center>
+<big><big><big><b><font face="kaiti">解题思路2</font></b></big></big></big>
+</center>
+  用贪心算法的思想很简单。每一次都取尽可能币值大的纸币即可
+<center>
+<big><big><big><b><font face="kaiti">代码实现2</font></b></big></big></big>
+</center>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">7</span>;</span><br><span class="line"><span class="keyword">int</span> Count[N] = &#123; <span class="number">3</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span> &#125;;<span class="comment">//每一张纸币的数量 </span></span><br><span class="line"><span class="keyword">int</span> Value[N] = &#123; <span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">10</span>,<span class="number">20</span>,<span class="number">50</span>,<span class="number">100</span> &#125;;<span class="comment">//每一张的面额  </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> money)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> num = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = N - <span class="number">1</span>;i &gt;= <span class="number">0</span>;i--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> c = <span class="built_in">min</span>(money / Value[i], Count[i]);<span class="comment">//每一个所需要的张数 </span></span><br><span class="line">		money = money - c * Value[i];</span><br><span class="line">		num += c;<span class="comment">//总张数 </span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (money &gt; <span class="number">0</span>) num = <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">return</span> num;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> money;</span><br><span class="line">	cout&lt;&lt;<span class="string">&quot;请输入需要兑换的总金额：&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cin &gt;&gt; money;</span><br><span class="line">	<span class="keyword">int</span> res = <span class="built_in">solve</span>(money);</span><br><span class="line">	<span class="keyword">if</span> (res != <span class="number">-1</span>) cout &lt;&lt; res &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">else</span> cout &lt;&lt; <span class="string">&quot;ERROR&quot;</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -337,7 +369,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://wangzihan20.github.io/2022/01/20/py-num-pandas3/" title="py-num-pandas3">https://wangzihan20.github.io/2022/01/20/py-num-pandas3/</a>
+      <a href="https://wangzihan20.github.io/2022/04/06/dp1/" title="DP|贪心五例">https://wangzihan20.github.io/2022/04/06/dp1/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -362,19 +394,19 @@
   </div>
 </div>
 
+          <div class="post-tags">
+              <a href="/tags/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1/" rel="tag"><i class="fa fa-tag"></i> 算法设计</a>
+          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/01/20/py-num-pandas2/" rel="prev" title="py-num-pandas2">
-                  <i class="fa fa-chevron-left"></i> py-num-pandas2
+                <a href="/2022/04/06/dp2/" rel="prev" title="DP|回溯七例">
+                  <i class="fa fa-chevron-left"></i> DP|回溯七例
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/02/07/Punch/" rel="next" title="企业微信打卡脚本教程">
-                  企业微信打卡脚本教程 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -446,7 +478,7 @@
 
 
 
-<script class="next-config" data-name="valine" type="application/json">{"enable":true,"appId":"VmtlzmDMWxYSz8xQ3ycieFj9-gzGzoHsz","appKey":"2tty3gM3OtB9XmGCCpWjwzE6","serverURLs":"https://vmtlzmdm.lc-cn-n1-shared.com","placeholder":"请开始你的表演~","avatar":"retro","meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":false,"comment_count":true,"recordIP":false,"enableQQ":true,"requiredFields":[],"valine":"https://cdn.jsdelivr.net/npm/valine@1.4.16/dist/Valine.min.js","emojiCDN":"https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/","el":"#valine-comments","path":"/2022/01/20/py-num-pandas3/"}</script>
+<script class="next-config" data-name="valine" type="application/json">{"enable":true,"appId":"VmtlzmDMWxYSz8xQ3ycieFj9-gzGzoHsz","appKey":"2tty3gM3OtB9XmGCCpWjwzE6","serverURLs":"https://vmtlzmdm.lc-cn-n1-shared.com","placeholder":"请开始你的表演~","avatar":"retro","meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":false,"comment_count":true,"recordIP":false,"enableQQ":true,"requiredFields":[],"valine":"https://cdn.jsdelivr.net/npm/valine@1.4.16/dist/Valine.min.js","emojiCDN":"https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/","el":"#valine-comments","path":"/2022/04/06/dp1/"}</script>
 <script>
 document.addEventListener('page:loaded', () => {
   NexT.utils.loadComments(CONFIG.valine.el)
