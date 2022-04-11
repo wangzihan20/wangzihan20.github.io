@@ -374,7 +374,7 @@ mjx-container[display="true"] + br {
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-11 12:21:22" itemprop="dateModified" datetime="2022-04-11T12:21:22+08:00">2022-04-11</time>
+      <time title="修改时间：2022-04-11 12:21:59" itemprop="dateModified" datetime="2022-04-11T12:21:59+08:00">2022-04-11</time>
     </span>
 
   
@@ -429,140 +429,15 @@ mjx-container[display="true"] + br {
 <big><big><big><b><font face="kaiti">摘要</font></b></big></big></big>
 </center>
 <p>  参考两层玻璃窗保暖效果，本文研究三层玻璃窗的保暖功效。运用初等方法建立模型，建立了方程组使得抽象的热量传导问题具体化、数字化，同时使用Matlab工具完成计算以及绘图，可视化效果更好。</p>
-<p><strong>关键词</strong>：能量守恒定律 热传导 牛顿冷却定律</p>
-<center>
-<big><big><big><b><font face="kaiti">一、问题重述</font></b></big></big></big>
-</center>
-  我国北方许多城镇的一些建筑物都是双层玻璃的，即窗户上装两层玻璃中间留有一定的空隙，如图1与图2。两层厚度为d的玻璃夹着一层厚度为L的空气，据说这样的设计是为了保暖。现在考虑使用三层玻璃，三层厚度为d的玻璃夹着两层厚度为L的空气的情况，并且将三层玻璃窗与同样多材料做成的双增玻璃窗与单层玻璃窗的热量传导进行对比，定量分析三层玻璃窗损失的热量，解释为什么大多数人使用双层玻璃窗而不是三层玻璃窗。
-<center>
-<big><big><big><b><font face="kaiti">二、模型假设</font></b></big></big></big>
-</center>
-<p>  该问题主要部分是研究热量传导问题，这与室内外温度、玻璃窗密封状况、玻璃材质、房间保温能力等情况有关，为了便于量化分析与物理规律的适用，现做出如下合理假设：</p>
-<ul>
-<li>假设窗户的密封性很好，且玻璃之间的空气没有流动，传导过程没有对流，忽略辐射散热；</li>
-<li>玻璃材质均匀，热传导系数是常数；</li>
-<li>室内温度与室外温度保持不变，热传导开始即稳定；</li>
-<li>室内热量从房门或者其他途径损失忽略不计。
-<center>
-<big><big><big><b><font face="kaiti">四、符号说明</font></b></big></big></big>
-</center>
-符号说明要点如下：</li>
-</ul>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">符号</th>
-<th style="text-align: center;">解释</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(Q_i\)</span></td>
-<td style="text-align: center;">热量</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math inline">\(d\)</span></td>
-<td style="text-align: center;">玻璃宽度</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(l\)</span></td>
-<td style="text-align: center;">间隙宽度</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math inline">\(k\)</span></td>
-<td style="text-align: center;">热传导系数</td>
-</tr>
-</tbody>
-</table>
-<center>
-<big><big><big><b><font face="kaiti">五、模型建立</font></b></big></big></big>
-</center>
-<p>  上述假设成立的情况下，室外和室内的热传导遵循以下牛顿冷却定律：对于厚度为d的均匀介质，若两侧的温差为<span class="math inline">\(?T\)</span>，则单位时间由温度高的一侧通过单位面积的热量<span class="math inline">\(Q\)</span>与<span class="math inline">\(?T\)</span>成正比，与<span class="math inline">\(d\)</span>成反比，即：</p>
-<p><span class="math display">\[
-Q=k ?T/d
-\]</span></p>
-<p>  其中k为热传导系数。   对于三层玻璃，如图所示： <img src="/2022/04/09/lunwen/1.png" class></p>
-<p>  温度<span class="math inline">\(T_1、T_2、T_a、T_b、T_a1、T_b1\)</span>,玻璃的热传导系数为<span class="math inline">\(k_1\)</span>，空气的热传导系数为<span class="math inline">\(k_2\)</span>。根据能量守恒定律，当达到热平衡的时候，由室内传导到窗户上的热量等于窗户内侧传导到外侧的热量，同时也等于窗外侧散失到窗外的热量。 所以三层玻璃的热传导为： <span class="math display">\[
-T_1-T_a=d/k_1  Q_3
-\]</span> <span class="math display">\[
-T_a-T_b=l/2 Q_3
-\]</span> <span class="math display">\[
-T_b-T_a1=d/k_1  Q_3
-\]</span> <span class="math display">\[
-T_a1-T_b1=l/k_2  Q_3
-\]</span> <span class="math display">\[
-T_b1-T_2=d/k_1  Q_3
-\]</span></p>
-五个式子相加有： <span class="math display">\[
-T_1-T_2=(3d/k_1 +2l/k_2 )*Q_3
-\]</span> 设 <span class="math display">\[
-h=l/d,s=h k_1/k_2 
-\]</span> 则得到 <span class="math display">\[
-Q_3=k_1  (T_1-T_2)/((3+2s)d)
-\]</span>   对于双层玻璃，有如下示意图： <img src="/2022/04/09/lunwen/2.png" class>   我们可以做如下计算： <span class="math display">\[
-T_1-T_a=1.5d/k_1  Q_2
-\]</span> <span class="math display">\[
-T_a-T_b=l/k_2  Q_2
-\]</span> <span class="math display">\[
-T_b-T_2=1.5d/k_1  Q_2
-\]</span> 三式相加得到： <span class="math display">\[
-T_1-T_2=(3d/k_1 +l/k_2 ) Q_2
-\]</span> 设 <span class="math display">\[
-h=l/d,s=h k_1/k_2 
-\]</span> 则得到 <span class="math display">\[
-Q_2=k_1  (T_1-T_2)/((3+s)d)
-\]</span>   对于单层玻璃，有如下示意图： <img src="/2022/04/09/lunwen/3.png" class>   可以做如下简单计算： <span class="math display">\[
-T_1-T_2=3d/k_1  Q_1
-\]</span> 得到 <span class="math display">\[
-Q_1=k_1  (T_1-T_2)/3d
-\]</span>
-<center>
-<big><big><big><b><font face="kaiti">六、模型求解</font></b></big></big></big>
-</center>
-<p>  要想对三种玻璃窗的保暖效果进行比较，只需要比较三个不同的热传导值，考虑两者之比：</p>
-<p><span class="math display">\[
-Q_3/Q_1 =3/(3+2s)
-\]</span> <span class="math display">\[
-Q_2/Q_1 =3/(3+s)
-\]</span> <span class="math display">\[
-Q_3/Q_2 =(3+s)/(3+2s)
-\]</span> 显然 <span class="math display">\[
-Q_3&lt;Q_1
-\]</span> <span class="math display">\[
-Q_2&lt;Q_1
-\]</span> <span class="math display">\[
-Q_3&lt;Q_2
-\]</span>   所以三层玻璃窗与两层玻璃窗减少的热量损失比小于同样多材料做的单层玻璃窗的热量损失。为了得到具体的结果，我们需要知道k_1和k_2的具体数据。从有关文献我们得到常用的窗户玻璃的热传导系数<span class="math inline">\(k_1=4*10^(-3)~8*10^(-3) J/(cm.s.℃)\)</span>如果不流通，干燥空气的热传导系数<span class="math inline">\(k_2=2.5*10^(-4) J/(cm.s.℃)\)</span>。 所以</p>
-<p><span class="math display">\[
-k_1/k_2 =16~32
-\]</span> 我们取最保守估计，即 <span class="math display">\[
-k_1/k_2 =16
-\]</span> 所以 <span class="math display">\[
-s=16h
-\]</span> 则得到 <span class="math display">\[
-Q_3/Q_1 =3/(3+32s)
-\]</span> <span class="math display">\[
-Q_2/Q_1 =3/(3+16s)
-\]</span> <span class="math display">\[
-Q_3/Q_2 =(3+16s)/(3+32s)
-\]</span> 其中 <span class="math display">\[
-h=l/d
-\]</span> 利用matlab绘图，可视化表达，程序如下 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">clear</span><br><span class="line">syms x</span><br><span class="line">lims=[<span class="number">0</span> <span class="number">8</span>];</span><br><span class="line">y31=<span class="number">3</span>/(<span class="number">3</span>+<span class="number">32</span>*x);</span><br><span class="line">y21=<span class="number">3</span>/(<span class="number">3</span>+<span class="number">16</span>*x);</span><br><span class="line">y32=(<span class="number">3</span>+<span class="number">16</span>*x)/(<span class="number">3</span>+<span class="number">32</span>*x);</span><br><span class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">ezplot(y31,lims)</span><br><span class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">ezplot(y21,lims)</span><br><span class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">3</span>)</span><br><span class="line">ezplot(y32,lims)</span><br></pre></td></tr></table></figure> 运行程序可以得到如下图像 <img src="/2022/04/09/lunwen/4.png" class> 我们发现： 1. 上面三个图的比值反映了玻璃窗在减少热量损失的效果。它只与<span class="math inline">\(h=l/d\)</span>有关，且由<span class="math inline">\(Q_3/Q_1\)</span> 可知，当h由0增大时，<span class="math inline">\(Q_3/Q_1\)</span> 比值快速下降，则表明三层玻璃窗的空隙越大，比单层玻璃窗的保暖效果越好，但是超过一定值之后，比值下降变缓慢，效果不太好。所以h不宜太大。 2. 第二条曲线也是如此，在<span class="math inline">\(h&gt;4\)</span>时，<span class="math inline">\(Q_2/Q_1\)</span> 比值开始变缓，第三条曲线反映的是<span class="math inline">\(Q_3/Q_2\)</span> 随h的增大即玻璃之间的空隙越大，三层玻璃窗比两层玻璃窗的保暖效果就越好，不过<span class="math inline">\(h&gt;4\)</span>之后，效果不那么好，效果虽然强<span class="math inline">\(30\%~40\%\)</span>，但是耗费的材料很多。而且比二层玻璃窗的保暖效果提高不了多少，所从经济与效果的层面上看，多数居民会选择二层玻璃而不是三层玻璃。</p>
-<center>
-<big><big><big><b><font face="kaiti">六、模型评价</font></b></big></big></big>
-</center>
-<p>模型优缺点：</p>
-<ol type="1">
-<li>本模型具有一定的应用价值，一般来说建筑规范要求h=l/d≈4，按照此模型双层玻璃窗比同样多材料做成的单层玻璃节约热量97%，效果十分不错，而三层玻璃效果没这么好。</li>
-<li>由于模型假设的存在，上述分析都是在理想情况下的结论，所以三层玻璃的实际保暖效果与之相比会有一定的差距。
-<center>
-<big><big><big><b><font face="kaiti">七、参考文献</font></b></big></big></big>
-</center></li>
-</ol>
-<p>[1]姜启源．数学模型[M]．北京：高等教育出版社，1993</p>
-<p>[2]黄丽莉,侯君芳.三层玻璃窗与双层玻璃窗实用性比较[J].科技风,2010(4):237-237239</p>
-<p>[3]刘敏.哈尔滨：节能新建筑须用三层玻璃外窗[J].墙材革新与建筑节能,2005(4):56-56</p>
-
+<strong>关键词</strong>：能量守恒定律 热传导 牛顿冷却定律
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/04/09/lunwen/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

@@ -2400,7 +2400,7 @@ object|Python object类型
 <big><big><big><b><font face="kaiti">摘要</font></b></big></big></big>
 </center>
 <p>  参考两层玻璃窗保暖效果，本文研究三层玻璃窗的保暖功效。运用初等方法建立模型，建立了方程组使得抽象的热量传导问题具体化、数字化，同时使用Matlab工具完成计算以及绘图，可视化效果更好。</p>
-<p><strong>关键词</strong>：能量守恒定律 热传导 牛顿冷却定律</p>
+<strong>关键词</strong>：能量守恒定律 热传导 牛顿冷却定律 <span id="more"></span>
 <center>
 <big><big><big><b><font face="kaiti">一、问题重述</font></b></big></big></big>
 </center>
