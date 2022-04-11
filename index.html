@@ -356,7 +356,7 @@ mjx-container[display="true"] + br {
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/04/09/lunwen/" class="post-title-link" itemprop="url">�����ȴ��������㲣���ı�ů��Ч�о�</a>
+          <a href="/2022/04/09/lunwen/" class="post-title-link" itemprop="url">基于热传导的三层玻璃的保暖功效研究</a>
         </h2>
 
         <div class="post-meta-container">
@@ -374,7 +374,7 @@ mjx-container[display="true"] + br {
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-11 12:20:50" itemprop="dateModified" datetime="2022-04-11T12:20:50+08:00">2022-04-11</time>
+      <time title="修改时间：2022-04-11 12:21:22" itemprop="dateModified" datetime="2022-04-11T12:21:22+08:00">2022-04-11</time>
     </span>
 
   
@@ -398,14 +398,14 @@ mjx-container[display="true"] + br {
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>3.5k</span>
+      <span>2.6k</span>
     </span>
     <span class="post-meta-item" title="估计阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">估计阅读时长 &asymp;</span>
-      <span>3 分钟</span>
+      <span>2 分钟</span>
     </span>
 </div>
 
@@ -417,72 +417,72 @@ mjx-container[display="true"] + br {
     
     <div class="post-body" itemprop="articleBody">
           <center>
-<big><big><big><b><font face="kaiti">�����ȴ��������㲣���ı�ů��Ч�о�</font></b></big></big></big>
+<big><big><big><b><font face="kaiti">基于热传导的三层玻璃的保暖功效研究</font></b></big></big></big>
 </center>
 <center>
 <samall><font face="arial">2022.4.07</font>
 </samall></center>
 <center>
-<samall><small><font face="����">������</font></small>
+<samall><small><font face="宋体">王梓涵</font></small>
 </samall></center>
 <center>
-<big><big><big><b><font face="kaiti">ժҪ</font></b></big></big></big>
+<big><big><big><b><font face="kaiti">摘要</font></b></big></big></big>
 </center>
-<p>  �ο����㲣������ůЧ���������о����㲣�����ı�ů��Ч�����ó��ȷ�������ģ�ͣ������˷�����ʹ�ó������������������廯�����ֻ���ͬʱʹ��Matlab������ɼ����Լ���ͼ�����ӻ�Ч�����á�</p>
-<p><strong>�ؼ���</strong>�������غ㶨�� �ȴ��� ţ����ȴ����</p>
+<p>  参考两层玻璃窗保暖效果，本文研究三层玻璃窗的保暖功效。运用初等方法建立模型，建立了方程组使得抽象的热量传导问题具体化、数字化，同时使用Matlab工具完成计算以及绘图，可视化效果更好。</p>
+<p><strong>关键词</strong>：能量守恒定律 热传导 牛顿冷却定律</p>
 <center>
-<big><big><big><b><font face="kaiti">һ����������</font></b></big></big></big>
+<big><big><big><b><font face="kaiti">一、问题重述</font></b></big></big></big>
 </center>
-  �ҹ�������������һЩ�����ﶼ��˫�㲣���ģ���������װ���㲣���м�����һ���Ŀ�϶����ͼ1��ͼ2��������Ϊd�Ĳ�������һ����ΪL�Ŀ�������˵�����������Ϊ�˱�ů�����ڿ���ʹ�����㲣����������Ϊd�Ĳ�������������ΪL�Ŀ�������������ҽ����㲣������ͬ����������ɵ�˫���������뵥�㲣�����������������жԱȣ������������㲣������ʧ������������Ϊʲô�������ʹ��˫�㲣�������������㲣������
+  我国北方许多城镇的一些建筑物都是双层玻璃的，即窗户上装两层玻璃中间留有一定的空隙，如图1与图2。两层厚度为d的玻璃夹着一层厚度为L的空气，据说这样的设计是为了保暖。现在考虑使用三层玻璃，三层厚度为d的玻璃夹着两层厚度为L的空气的情况，并且将三层玻璃窗与同样多材料做成的双增玻璃窗与单层玻璃窗的热量传导进行对比，定量分析三层玻璃窗损失的热量，解释为什么大多数人使用双层玻璃窗而不是三层玻璃窗。
 <center>
-<big><big><big><b><font face="kaiti">����ģ�ͼ���</font></b></big></big></big>
+<big><big><big><b><font face="kaiti">二、模型假设</font></b></big></big></big>
 </center>
-<p>  ��������Ҫ�������о������������⣬�����������¶ȡ��������ܷ�״�����������ʡ����䱣������������йأ�Ϊ�˱��������������������ɵ����ã����������º������裺</p>
+<p>  该问题主要部分是研究热量传导问题，这与室内外温度、玻璃窗密封状况、玻璃材质、房间保温能力等情况有关，为了便于量化分析与物理规律的适用，现做出如下合理假设：</p>
 <ul>
-<li>���贰�����ܷ��Ժܺã��Ҳ���֮��Ŀ���û����������������û�ж��������Է���ɢ�ȣ�</li>
-<li>�������ʾ��ȣ��ȴ���ϵ���ǳ�����</li>
-<li>�����¶��������¶ȱ��ֲ��䣬�ȴ�����ʼ���ȶ���</li>
-<li>���������ӷ��Ż�������;����ʧ���Բ��ơ�
+<li>假设窗户的密封性很好，且玻璃之间的空气没有流动，传导过程没有对流，忽略辐射散热；</li>
+<li>玻璃材质均匀，热传导系数是常数；</li>
+<li>室内温度与室外温度保持不变，热传导开始即稳定；</li>
+<li>室内热量从房门或者其他途径损失忽略不计。
 <center>
-<big><big><big><b><font face="kaiti">�ġ�����˵��</font></b></big></big></big>
+<big><big><big><b><font face="kaiti">四、符号说明</font></b></big></big></big>
 </center>
-����˵��Ҫ�����£�</li>
+符号说明要点如下：</li>
 </ul>
 <table>
 <thead>
 <tr class="header">
-<th style="text-align: center;">����</th>
-<th style="text-align: center;">����</th>
+<th style="text-align: center;">符号</th>
+<th style="text-align: center;">解释</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">\(Q_i\)</span></td>
-<td style="text-align: center;">����</td>
+<td style="text-align: center;">热量</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><span class="math inline">\(d\)</span></td>
-<td style="text-align: center;">��������</td>
+<td style="text-align: center;">玻璃宽度</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">\(l\)</span></td>
-<td style="text-align: center;">��϶����</td>
+<td style="text-align: center;">间隙宽度</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><span class="math inline">\(k\)</span></td>
-<td style="text-align: center;">�ȴ���ϵ��</td>
+<td style="text-align: center;">热传导系数</td>
 </tr>
 </tbody>
 </table>
 <center>
-<big><big><big><b><font face="kaiti">�塢ģ�ͽ���</font></b></big></big></big>
+<big><big><big><b><font face="kaiti">五、模型建立</font></b></big></big></big>
 </center>
-<p>  �����������������£���������ڵ��ȴ�����ѭ����ţ����ȴ���ɣ����ں��Ϊd�ľ��Ƚ��ʣ���������²�Ϊ<span class="math inline">\(?T\)</span>����λʱ�����¶ȸߵ�һ��ͨ����λ���������<span class="math inline">\(Q\)</span>��<span class="math inline">\(?T\)</span>�����ȣ���<span class="math inline">\(d\)</span>�ɷ��ȣ�����</p>
+<p>  上述假设成立的情况下，室外和室内的热传导遵循以下牛顿冷却定律：对于厚度为d的均匀介质，若两侧的温差为<span class="math inline">\(?T\)</span>，则单位时间由温度高的一侧通过单位面积的热量<span class="math inline">\(Q\)</span>与<span class="math inline">\(?T\)</span>成正比，与<span class="math inline">\(d\)</span>成反比，即：</p>
 <p><span class="math display">\[
 Q=k ?T/d
 \]</span></p>
-<p>  ����kΪ�ȴ���ϵ����   �������㲣������ͼ��ʾ�� <img src="/2022/04/09/lunwen/1.png" class></p>
-<p>  �¶�<span class="math inline">\(T_1��T_2��T_a��T_b��T_a1��T_b1\)</span>,�������ȴ���ϵ��Ϊ<span class="math inline">\(k_1\)</span>���������ȴ���ϵ��Ϊ<span class="math inline">\(k_2\)</span>�����������غ㶨�ɣ����ﵽ��ƽ���ʱ�������ڴ����������ϵ��������ڴ����ڲഫ��������������ͬʱҲ���ڴ����ɢʧ������������� �������㲣�����ȴ���Ϊ�� <span class="math display">\[
+<p>  其中k为热传导系数。   对于三层玻璃，如图所示： <img src="/2022/04/09/lunwen/1.png" class></p>
+<p>  温度<span class="math inline">\(T_1、T_2、T_a、T_b、T_a1、T_b1\)</span>,玻璃的热传导系数为<span class="math inline">\(k_1\)</span>，空气的热传导系数为<span class="math inline">\(k_2\)</span>。根据能量守恒定律，当达到热平衡的时候，由室内传导到窗户上的热量等于窗户内侧传导到外侧的热量，同时也等于窗外侧散失到窗外的热量。 所以三层玻璃的热传导为： <span class="math display">\[
 T_1-T_a=d/k_1  Q_3
 \]</span> <span class="math display">\[
 T_a-T_b=l/2 Q_3
@@ -493,75 +493,75 @@ T_a1-T_b1=l/k_2  Q_3
 \]</span> <span class="math display">\[
 T_b1-T_2=d/k_1  Q_3
 \]</span></p>
-���ʽ������У� <span class="math display">\[
+五个式子相加有： <span class="math display">\[
 T_1-T_2=(3d/k_1 +2l/k_2 )*Q_3
-\]</span> �� <span class="math display">\[
+\]</span> 设 <span class="math display">\[
 h=l/d,s=h k_1/k_2 
-\]</span> ��õ� <span class="math display">\[
+\]</span> 则得到 <span class="math display">\[
 Q_3=k_1  (T_1-T_2)/((3+2s)d)
-\]</span>   ����˫�㲣����������ʾ��ͼ�� <img src="/2022/04/09/lunwen/2.png" class>   ���ǿ��������¼��㣺 <span class="math display">\[
+\]</span>   对于双层玻璃，有如下示意图： <img src="/2022/04/09/lunwen/2.png" class>   我们可以做如下计算： <span class="math display">\[
 T_1-T_a=1.5d/k_1  Q_2
 \]</span> <span class="math display">\[
 T_a-T_b=l/k_2  Q_2
 \]</span> <span class="math display">\[
 T_b-T_2=1.5d/k_1  Q_2
-\]</span> ��ʽ��ӵõ��� <span class="math display">\[
+\]</span> 三式相加得到： <span class="math display">\[
 T_1-T_2=(3d/k_1 +l/k_2 ) Q_2
-\]</span> �� <span class="math display">\[
+\]</span> 设 <span class="math display">\[
 h=l/d,s=h k_1/k_2 
-\]</span> ��õ� <span class="math display">\[
+\]</span> 则得到 <span class="math display">\[
 Q_2=k_1  (T_1-T_2)/((3+s)d)
-\]</span>   ���ڵ��㲣����������ʾ��ͼ�� <img src="/2022/04/09/lunwen/3.png" class>   ���������¼򵥼��㣺 <span class="math display">\[
+\]</span>   对于单层玻璃，有如下示意图： <img src="/2022/04/09/lunwen/3.png" class>   可以做如下简单计算： <span class="math display">\[
 T_1-T_2=3d/k_1  Q_1
-\]</span> �õ� <span class="math display">\[
+\]</span> 得到 <span class="math display">\[
 Q_1=k_1  (T_1-T_2)/3d
 \]</span>
 <center>
-<big><big><big><b><font face="kaiti">����ģ�����</font></b></big></big></big>
+<big><big><big><b><font face="kaiti">六、模型求解</font></b></big></big></big>
 </center>
-<p>  Ҫ������ֲ������ı�ůЧ�����бȽϣ�ֻ��Ҫ�Ƚ�������ͬ���ȴ���ֵ����������֮�ȣ�</p>
+<p>  要想对三种玻璃窗的保暖效果进行比较，只需要比较三个不同的热传导值，考虑两者之比：</p>
 <p><span class="math display">\[
 Q_3/Q_1 =3/(3+2s)
 \]</span> <span class="math display">\[
 Q_2/Q_1 =3/(3+s)
 \]</span> <span class="math display">\[
 Q_3/Q_2 =(3+s)/(3+2s)
-\]</span> ��Ȼ <span class="math display">\[
+\]</span> 显然 <span class="math display">\[
 Q_3&lt;Q_1
 \]</span> <span class="math display">\[
 Q_2&lt;Q_1
 \]</span> <span class="math display">\[
 Q_3&lt;Q_2
-\]</span>   �������㲣���������㲣�������ٵ�������ʧ��С��ͬ����������ĵ��㲣������������ʧ��Ϊ�˵õ�����Ľ����������Ҫ֪��k_1��k_2�ľ������ݡ����й��������ǵõ����õĴ����������ȴ���ϵ��<span class="math inline">\(k_1=4*10^(-3)~8*10^(-3) J/(cm.s.��)\)</span>�������ͨ������������ȴ���ϵ��<span class="math inline">\(k_2=2.5*10^(-4) J/(cm.s.��)\)</span>�� ����</p>
+\]</span>   所以三层玻璃窗与两层玻璃窗减少的热量损失比小于同样多材料做的单层玻璃窗的热量损失。为了得到具体的结果，我们需要知道k_1和k_2的具体数据。从有关文献我们得到常用的窗户玻璃的热传导系数<span class="math inline">\(k_1=4*10^(-3)~8*10^(-3) J/(cm.s.℃)\)</span>如果不流通，干燥空气的热传导系数<span class="math inline">\(k_2=2.5*10^(-4) J/(cm.s.℃)\)</span>。 所以</p>
 <p><span class="math display">\[
 k_1/k_2 =16~32
-\]</span> ����ȡ��ع��ƣ��� <span class="math display">\[
+\]</span> 我们取最保守估计，即 <span class="math display">\[
 k_1/k_2 =16
-\]</span> ���� <span class="math display">\[
+\]</span> 所以 <span class="math display">\[
 s=16h
-\]</span> ��õ� <span class="math display">\[
+\]</span> 则得到 <span class="math display">\[
 Q_3/Q_1 =3/(3+32s)
 \]</span> <span class="math display">\[
 Q_2/Q_1 =3/(3+16s)
 \]</span> <span class="math display">\[
 Q_3/Q_2 =(3+16s)/(3+32s)
-\]</span> ���� <span class="math display">\[
+\]</span> 其中 <span class="math display">\[
 h=l/d
-\]</span> ����matlab��ͼ�����ӻ������������ <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">clear</span><br><span class="line">syms x</span><br><span class="line">lims=[<span class="number">0</span> <span class="number">8</span>];</span><br><span class="line">y31=<span class="number">3</span>/(<span class="number">3</span>+<span class="number">32</span>*x);</span><br><span class="line">y21=<span class="number">3</span>/(<span class="number">3</span>+<span class="number">16</span>*x);</span><br><span class="line">y32=(<span class="number">3</span>+<span class="number">16</span>*x)/(<span class="number">3</span>+<span class="number">32</span>*x);</span><br><span class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">ezplot(y31,lims)</span><br><span class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">ezplot(y21,lims)</span><br><span class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">3</span>)</span><br><span class="line">ezplot(y32,lims)</span><br></pre></td></tr></table></figure> ���г�����Եõ�����ͼ�� <img src="/2022/04/09/lunwen/4.png" class> ���Ƿ��֣� 1. ��������ͼ�ı�ֵ��ӳ�˲������ڼ���������ʧ��Ч������ֻ��<span class="math inline">\(h=l/d\)</span>�йأ�����<span class="math inline">\(Q_3/Q_1\)</span> ��֪����h��0����ʱ��<span class="math inline">\(Q_3/Q_1\)</span> ��ֵ�����½�����������㲣�����Ŀ�϶Խ�󣬱ȵ��㲣�����ı�ůЧ��Խ�ã����ǳ���һ��ֵ֮�󣬱�ֵ�½��仺����Ч����̫�á�����h����̫�� 2. �ڶ�������Ҳ����ˣ���<span class="math inline">\(h&gt;4\)</span>ʱ��<span class="math inline">\(Q_2/Q_1\)</span> ��ֵ��ʼ�仺�����������߷�ӳ����<span class="math inline">\(Q_3/Q_2\)</span> ��h�����󼴲���֮��Ŀ�϶Խ�����㲣���������㲣�����ı�ůЧ����Խ�ã�����<span class="math inline">\(h&gt;4\)</span>֮��Ч������ô�ã�Ч����Ȼǿ<span class="math inline">\(30\%~40\%\)</span>�����ǺķѵĲ��Ϻܶࡣ���ұȶ��㲣�����ı�ůЧ����߲��˶��٣����Ӿ�����Ч���Ĳ����Ͽ������������ѡ����㲣�����������㲣����</p>
+\]</span> 利用matlab绘图，可视化表达，程序如下 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">clear</span><br><span class="line">syms x</span><br><span class="line">lims=[<span class="number">0</span> <span class="number">8</span>];</span><br><span class="line">y31=<span class="number">3</span>/(<span class="number">3</span>+<span class="number">32</span>*x);</span><br><span class="line">y21=<span class="number">3</span>/(<span class="number">3</span>+<span class="number">16</span>*x);</span><br><span class="line">y32=(<span class="number">3</span>+<span class="number">16</span>*x)/(<span class="number">3</span>+<span class="number">32</span>*x);</span><br><span class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">ezplot(y31,lims)</span><br><span class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">ezplot(y21,lims)</span><br><span class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">3</span>)</span><br><span class="line">ezplot(y32,lims)</span><br></pre></td></tr></table></figure> 运行程序可以得到如下图像 <img src="/2022/04/09/lunwen/4.png" class> 我们发现： 1. 上面三个图的比值反映了玻璃窗在减少热量损失的效果。它只与<span class="math inline">\(h=l/d\)</span>有关，且由<span class="math inline">\(Q_3/Q_1\)</span> 可知，当h由0增大时，<span class="math inline">\(Q_3/Q_1\)</span> 比值快速下降，则表明三层玻璃窗的空隙越大，比单层玻璃窗的保暖效果越好，但是超过一定值之后，比值下降变缓慢，效果不太好。所以h不宜太大。 2. 第二条曲线也是如此，在<span class="math inline">\(h&gt;4\)</span>时，<span class="math inline">\(Q_2/Q_1\)</span> 比值开始变缓，第三条曲线反映的是<span class="math inline">\(Q_3/Q_2\)</span> 随h的增大即玻璃之间的空隙越大，三层玻璃窗比两层玻璃窗的保暖效果就越好，不过<span class="math inline">\(h&gt;4\)</span>之后，效果不那么好，效果虽然强<span class="math inline">\(30\%~40\%\)</span>，但是耗费的材料很多。而且比二层玻璃窗的保暖效果提高不了多少，所从经济与效果的层面上看，多数居民会选择二层玻璃而不是三层玻璃。</p>
 <center>
-<big><big><big><b><font face="kaiti">����ģ������</font></b></big></big></big>
+<big><big><big><b><font face="kaiti">六、模型评价</font></b></big></big></big>
 </center>
-<p>ģ����ȱ�㣺</p>
+<p>模型优缺点：</p>
 <ol type="1">
-<li>��ģ�;���һ����Ӧ�ü�ֵ��һ����˵�����淶Ҫ��h=l/d��4�����մ�ģ��˫�㲣������ͬ����������ɵĵ��㲣����Լ����97%��Ч��ʮ�ֲ����������㲣��Ч��û��ô�á�</li>
-<li>����ģ�ͼ���Ĵ��ڣ�����������������������µĽ��ۣ��������㲣����ʵ�ʱ�ůЧ����֮��Ȼ���һ���Ĳ�ࡣ
+<li>本模型具有一定的应用价值，一般来说建筑规范要求h=l/d≈4，按照此模型双层玻璃窗比同样多材料做成的单层玻璃节约热量97%，效果十分不错，而三层玻璃效果没这么好。</li>
+<li>由于模型假设的存在，上述分析都是在理想情况下的结论，所以三层玻璃的实际保暖效果与之相比会有一定的差距。
 <center>
-<big><big><big><b><font face="kaiti">�ߡ��ο�����</font></b></big></big></big>
+<big><big><big><b><font face="kaiti">七、参考文献</font></b></big></big></big>
 </center></li>
 </ol>
-<p>[1]����Դ����ѧģ��[M]���������ߵȽ��������磬1993</p>
-<p>[2]������,�����.���㲣������˫�㲣����ʵ���ԱȽ�[J].�Ƽ���,2010(4):237-237239</p>
-<p>[3]����.�������������½����������㲣���ⴰ[J].ǽ�ĸ����뽨������,2005(4):56-56</p>
+<p>[1]姜启源．数学模型[M]．北京：高等教育出版社，1993</p>
+<p>[2]黄丽莉,侯君芳.三层玻璃窗与双层玻璃窗实用性比较[J].科技风,2010(4):237-237239</p>
+<p>[3]刘敏.哈尔滨：节能新建筑须用三层玻璃外窗[J].墙材革新与建筑节能,2005(4):56-56</p>
 
       
     </div>
@@ -2688,13 +2688,13 @@ h=l/d
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">130k</span>
+    <span title="站点总字数">129k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:58</span>
+    <span title="站点阅读时长">1:57</span>
   </span>
 </div>
 
