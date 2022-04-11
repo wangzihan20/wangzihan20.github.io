@@ -2385,146 +2385,154 @@ object|Python object类型
       </tags>
   </entry>
   <entry>
-    <title>lunwen</title>
+    <title>�����ȴ��������㲣���ı�ů��Ч�о�</title>
     <url>/2022/04/09/lunwen/</url>
-    <content><![CDATA[<center><big><big><big><b><font face="kaiti">�����ȴ��������㲣���ı�ů��Ч�о�</font></b></big></big></big></center>
-<center><samall><font face="arial">2022.4.07</font></samall></center>
-<center><samall><small><font face="����">������</font></small></samall></center>
-
-<center><big><big><big><b><font face="kaiti">ժҪ</font></b></big></big></big></center>
-&emsp;&emsp;�ο����㲣������ůЧ���������о����㲣�����ı�ů��Ч�����ó��ȷ�������ģ�ͣ������˷�����ʹ�ó������������������廯�����ֻ���ͬʱʹ��Matlab������ɼ����Լ���ͼ�����ӻ�Ч�����á�
-
-**�ؼ���**�������غ㶨�� �ȴ��� ţ����ȴ����
-
-<center><big><big><big><b><font face="kaiti">һ����������</font></b></big></big></big></center>
-
-
-<p>&emsp;&emsp;�ҹ�������������һЩ�����ﶼ��˫�㲣���ģ���������װ���㲣���м�����һ���Ŀ�϶����ͼ1��ͼ2��������Ϊd�Ĳ�������һ����ΪL�Ŀ�������˵�����������Ϊ�˱�ů�����ڿ���ʹ�����㲣����������Ϊd�Ĳ�������������ΪL�Ŀ�������������ҽ����㲣������ͬ����������ɵ�˫���������뵥�㲣�����������������жԱȣ������������㲣������ʧ������������Ϊʲô�������ʹ��˫�㲣�������������㲣������</p>
-<center><big><big><big><b><font face="kaiti">����ģ�ͼ���</font></b></big></big></big></center>
-&emsp;&emsp;��������Ҫ�������о������������⣬�����������¶ȡ��������ܷ�״�����������ʡ����䱣������������йأ�Ϊ�˱��������������������ɵ����ã����������º������裺 
-
-- ���贰�����ܷ��Ժܺã��Ҳ���֮��Ŀ���û����������������û�ж��������Է���ɢ�ȣ�
-- �������ʾ��ȣ��ȴ���ϵ���ǳ�����
-- �����¶��������¶ȱ��ֲ��䣬�ȴ�����ʼ���ȶ���
-- ���������ӷ��Ż�������;����ʧ���Բ��ơ�
-<center><big><big><big><b><font face="kaiti">�ġ�����˵��</font></b></big></big></big></center>
-����˵��Ҫ�����£�
-
-|����|����|
-|:-:|:-:|
-|$Q_i$|����|
-|$d$|��������|
-$l$|��϶����
-$k$|    �ȴ���ϵ��
-<center><big><big><big><b><font face="kaiti">�塢ģ�ͽ���</font></b></big></big></big></center>
-&emsp;&emsp;�����������������£���������ڵ��ȴ�����ѭ����ţ����ȴ���ɣ����ں��Ϊd�ľ��Ƚ��ʣ���������²�Ϊ$?T$����λʱ�����¶ȸߵ�һ��ͨ����λ���������$Q$��$?T$�����ȣ���$d$�ɷ��ȣ�����
-
-$$
+    <content><![CDATA[<center>
+<big><big><big><b><font face="kaiti">�����ȴ��������㲣���ı�ů��Ч�о�</font></b></big></big></big>
+</center>
+<center>
+<samall><font face="arial">2022.4.07</font>
+</samall></center>
+<center>
+<samall><small><font face="����">������</font></small>
+</samall></center>
+<center>
+<big><big><big><b><font face="kaiti">ժҪ</font></b></big></big></big>
+</center>
+<p>  �ο����㲣������ůЧ���������о����㲣�����ı�ů��Ч�����ó��ȷ�������ģ�ͣ������˷�����ʹ�ó������������������廯�����ֻ���ͬʱʹ��Matlab������ɼ����Լ���ͼ�����ӻ�Ч�����á�</p>
+<p><strong>�ؼ���</strong>�������غ㶨�� �ȴ��� ţ����ȴ����</p>
+<center>
+<big><big><big><b><font face="kaiti">һ����������</font></b></big></big></big>
+</center>
+  �ҹ�������������һЩ�����ﶼ��˫�㲣���ģ���������װ���㲣���м�����һ���Ŀ�϶����ͼ1��ͼ2��������Ϊd�Ĳ�������һ����ΪL�Ŀ�������˵�����������Ϊ�˱�ů�����ڿ���ʹ�����㲣����������Ϊd�Ĳ�������������ΪL�Ŀ�������������ҽ����㲣������ͬ����������ɵ�˫���������뵥�㲣�����������������жԱȣ������������㲣������ʧ������������Ϊʲô�������ʹ��˫�㲣�������������㲣������
+<center>
+<big><big><big><b><font face="kaiti">����ģ�ͼ���</font></b></big></big></big>
+</center>
+<p>  ��������Ҫ�������о������������⣬�����������¶ȡ��������ܷ�״�����������ʡ����䱣������������йأ�Ϊ�˱��������������������ɵ����ã����������º������裺</p>
+<ul>
+<li>���贰�����ܷ��Ժܺã��Ҳ���֮��Ŀ���û����������������û�ж��������Է���ɢ�ȣ�</li>
+<li>�������ʾ��ȣ��ȴ���ϵ���ǳ�����</li>
+<li>�����¶��������¶ȱ��ֲ��䣬�ȴ�����ʼ���ȶ���</li>
+<li>���������ӷ��Ż�������;����ʧ���Բ��ơ�
+<center>
+<big><big><big><b><font face="kaiti">�ġ�����˵��</font></b></big></big></big>
+</center>
+����˵��Ҫ�����£�</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">����</th>
+<th style="text-align: center;">����</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(Q_i\)</span></td>
+<td style="text-align: center;">����</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(d\)</span></td>
+<td style="text-align: center;">��������</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(l\)</span></td>
+<td style="text-align: center;">��϶����</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(k\)</span></td>
+<td style="text-align: center;">�ȴ���ϵ��</td>
+</tr>
+</tbody>
+</table>
+<center>
+<big><big><big><b><font face="kaiti">�塢ģ�ͽ���</font></b></big></big></big>
+</center>
+<p>  �����������������£���������ڵ��ȴ�����ѭ����ţ����ȴ���ɣ����ں��Ϊd�ľ��Ƚ��ʣ���������²�Ϊ<span class="math inline">\(?T\)</span>����λʱ�����¶ȸߵ�һ��ͨ����λ���������<span class="math inline">\(Q\)</span>��<span class="math inline">\(?T\)</span>�����ȣ���<span class="math inline">\(d\)</span>�ɷ��ȣ�����</p>
+<p><span class="math display">\[
 Q=k ?T/d
-$$
-
-&emsp;&emsp;����kΪ�ȴ���ϵ����
-&emsp;&emsp;�������㲣������ͼ��ʾ��
-<img src="/2022/04/09/lunwen/1.png" class>
-
-&emsp;&emsp;�¶�$T_1��T_2��T_a��T_b��T_a1��T_b1$,�������ȴ���ϵ��Ϊ$k_1$���������ȴ���ϵ��Ϊ$k_2$�����������غ㶨�ɣ����ﵽ��ƽ���ʱ�������ڴ����������ϵ��������ڴ����ڲഫ��������������ͬʱҲ���ڴ����ɢʧ�������������
-�������㲣�����ȴ���Ϊ��
-$$
+\]</span></p>
+<p>  ����kΪ�ȴ���ϵ����   �������㲣������ͼ��ʾ�� <img src="/2022/04/09/lunwen/1.png" class></p>
+<p>  �¶�<span class="math inline">\(T_1��T_2��T_a��T_b��T_a1��T_b1\)</span>,�������ȴ���ϵ��Ϊ<span class="math inline">\(k_1\)</span>���������ȴ���ϵ��Ϊ<span class="math inline">\(k_2\)</span>�����������غ㶨�ɣ����ﵽ��ƽ���ʱ�������ڴ����������ϵ��������ڴ����ڲഫ��������������ͬʱҲ���ڴ����ɢʧ������������� �������㲣�����ȴ���Ϊ�� <span class="math display">\[
 T_1-T_a=d/k_1  Q_3
-$$
-$$
+\]</span> <span class="math display">\[
 T_a-T_b=l/2 Q_3
-$$
-$$
+\]</span> <span class="math display">\[
 T_b-T_a1=d/k_1  Q_3
-$$
-$$
+\]</span> <span class="math display">\[
 T_a1-T_b1=l/k_2  Q_3
-$$
-$$
+\]</span> <span class="math display">\[
 T_b1-T_2=d/k_1  Q_3
-$$
-
-���ʽ������У�
-$$
+\]</span></p>
+���ʽ������У� <span class="math display">\[
 T_1-T_2=(3d/k_1 +2l/k_2 )*Q_3
-$$
-��
-$$
+\]</span> �� <span class="math display">\[
 h=l/d,s=h k_1/k_2 
-$$
-��õ�
-$$
+\]</span> ��õ� <span class="math display">\[
 Q_3=k_1  (T_1-T_2)/((3+2s)d)
-$$
-&emsp;&emsp;����˫�㲣����������ʾ��ͼ��
- <img src="/2022/04/09/lunwen/2.png" class>
-&emsp;&emsp;���ǿ��������¼��㣺
-$$
+\]</span>   ����˫�㲣����������ʾ��ͼ�� <img src="/2022/04/09/lunwen/2.png" class>   ���ǿ��������¼��㣺 <span class="math display">\[
 T_1-T_a=1.5d/k_1  Q_2
-$$
-$$
+\]</span> <span class="math display">\[
 T_a-T_b=l/k_2  Q_2
-$$
-$$
+\]</span> <span class="math display">\[
 T_b-T_2=1.5d/k_1  Q_2
-$$
-��ʽ��ӵõ���
-$$
+\]</span> ��ʽ��ӵõ��� <span class="math display">\[
 T_1-T_2=(3d/k_1 +l/k_2 ) Q_2
-$$
-��
-$$
+\]</span> �� <span class="math display">\[
 h=l/d,s=h k_1/k_2 
-$$
-��õ�
-$$
+\]</span> ��õ� <span class="math display">\[
 Q_2=k_1  (T_1-T_2)/((3+s)d)
-$$
-&emsp;&emsp;���ڵ��㲣����������ʾ��ͼ��
- <img src="/2022/04/09/lunwen/3.png" class>
-&emsp;&emsp;���������¼򵥼��㣺
-$$
+\]</span>   ���ڵ��㲣����������ʾ��ͼ�� <img src="/2022/04/09/lunwen/3.png" class>   ���������¼򵥼��㣺 <span class="math display">\[
 T_1-T_2=3d/k_1  Q_1
-$$
-�õ�
-$$
+\]</span> �õ� <span class="math display">\[
 Q_1=k_1  (T_1-T_2)/3d
-$$
-<center><big><big><big><b><font face="kaiti">����ģ�����</font></b></big></big></big></center>
-&emsp;&emsp;Ҫ������ֲ������ı�ůЧ�����бȽϣ�ֻ��Ҫ�Ƚ�������ͬ���ȴ���ֵ����������֮�ȣ�
-
-$$
+\]</span>
+<center>
+<big><big><big><b><font face="kaiti">����ģ�����</font></b></big></big></big>
+</center>
+<p>  Ҫ������ֲ������ı�ůЧ�����бȽϣ�ֻ��Ҫ�Ƚ�������ͬ���ȴ���ֵ����������֮�ȣ�</p>
+<p><span class="math display">\[
 Q_3/Q_1 =3/(3+2s)
-$$
-$$
+\]</span> <span class="math display">\[
 Q_2/Q_1 =3/(3+s)
-$$
-$$
+\]</span> <span class="math display">\[
 Q_3/Q_2 =(3+s)/(3+2s)
-$$
-��Ȼ
-$$
-Q_3<Q_1 $$ q_2<q_1 q_3<q_2 &emsp;&emsp;�������㲣���������㲣�������ٵ�������ʧ��с��ͬ����������ĵ��㲣������������ʧ��ϊ�˵õ�����ľ����������ҫ֪��k_1��k_2�ľ������ݡ����й��������ǵõ����õĵ����������ȴ���ϵ��$k_1="4*10^(-3)~8*10^(-3)" j (cm.s.��)$�������ͨ������������ȴ���ϵ��$k_2="2.5*10^(-4)" (cm.s.��)$�� ���� k_1 k_2="16~32" ����ȡ��ع��ƣ��� s="16h" ��õ� q_3 q_1="3/(3+32s)" q_2 h="l/d" ����matlab��ͼ�����ӻ������������ <figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">clear</span><br><span class="line">syms x</span><br><span class="line">lims=[<span class="number">0</span> <span class="number">8</span>];</span><br><span class="line">y31=<span class="number">3</span>/(<span class="number">3</span>+<span class="number">32</span>*x);</span><br><span class="line">y21=<span class="number">3</span>/(<span class="number">3</span>+<span class="number">16</span>*x);</span><br><span class="line">y32=(<span class="number">3</span>+<span class="number">16</span>*x)/(<span class="number">3</span>+<span class="number">32</span>*x);</span><br><span class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">ezplot(y31,lims)</span><br><span class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">ezplot(y21,lims)</span><br><span class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">3</span>)</span><br><span class="line">ezplot(y32,lims)</span><br></pre></td></tr></table>
-���г�����Եõ�����ͼ��
- <img src="/2022/04/09/lunwen/4.png" class>
-���Ƿ��֣�
-1. ��������ͼ�ı�ֵ��ӳ�˲������ڼ���������ʧ��Ч������ֻ��$h=l/d$�йأ�����$Q_3/Q_1$ ��֪����h��0����ʱ��$Q_3/Q_1$ ��ֵ�����½�����������㲣�����Ŀ�϶Խ�󣬱ȵ��㲣�����ı�ůЧ��Խ�ã����ǳ���һ��ֵ֮�󣬱�ֵ�½��仺����Ч����̫�á�����h����̫��
-2. �ڶ�������Ҳ����ˣ���$h>4$ʱ��$Q_2/Q_1$ ��ֵ��ʼ�仺�����������߷�ӳ����$Q_3/Q_2$ ��h�����󼴲���֮��Ŀ�϶Խ�����㲣���������㲣�����ı�ůЧ����Խ�ã�����$h>4$֮��Ч������ô�ã�Ч����Ȼǿ$30\%~40\%$�����ǺķѵĲ��Ϻܶࡣ���ұȶ��㲣�����ı�ůЧ����߲��˶��٣����Ӿ�����Ч���Ĳ����Ͽ������������ѡ����㲣�����������㲣����
-
-
-
-
-<center><big><big><big><b><font face="kaiti">����ģ������</font></b></big></big></big></center>
-ģ����ȱ�㣺
-
-1. ��ģ�;���һ����Ӧ�ü�ֵ��һ����˵�����淶Ҫ��h=l/d��4�����մ�ģ��˫�㲣������ͬ����������ɵĵ��㲣����Լ����97%��Ч��ʮ�ֲ����������㲣��Ч��û��ô�á�
-2. ����ģ�ͼ���Ĵ��ڣ�����������������������µĽ��ۣ��������㲣����ʵ�ʱ�ůЧ����֮��Ȼ���һ���Ĳ�ࡣ
-<center><big><big><big><b><font face="kaiti">�ߡ��ο�����</font></b></big></big></big></center>
-
-<p>[1]����Դ����ѧģ��[M]���������ߵȽ��������磬1993 </p>
+\]</span> ��Ȼ <span class="math display">\[
+Q_3&lt;Q_1
+\]</span> <span class="math display">\[
+Q_2&lt;Q_1
+\]</span> <span class="math display">\[
+Q_3&lt;Q_2
+\]</span>   �������㲣���������㲣�������ٵ�������ʧ��С��ͬ����������ĵ��㲣������������ʧ��Ϊ�˵õ�����Ľ����������Ҫ֪��k_1��k_2�ľ������ݡ����й��������ǵõ����õĴ����������ȴ���ϵ��<span class="math inline">\(k_1=4*10^(-3)~8*10^(-3) J/(cm.s.��)\)</span>�������ͨ������������ȴ���ϵ��<span class="math inline">\(k_2=2.5*10^(-4) J/(cm.s.��)\)</span>�� ����</p>
+<p><span class="math display">\[
+k_1/k_2 =16~32
+\]</span> ����ȡ��ع��ƣ��� <span class="math display">\[
+k_1/k_2 =16
+\]</span> ���� <span class="math display">\[
+s=16h
+\]</span> ��õ� <span class="math display">\[
+Q_3/Q_1 =3/(3+32s)
+\]</span> <span class="math display">\[
+Q_2/Q_1 =3/(3+16s)
+\]</span> <span class="math display">\[
+Q_3/Q_2 =(3+16s)/(3+32s)
+\]</span> ���� <span class="math display">\[
+h=l/d
+\]</span> ����matlab��ͼ�����ӻ������������ <figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">clear</span><br><span class="line">syms x</span><br><span class="line">lims=[<span class="number">0</span> <span class="number">8</span>];</span><br><span class="line">y31=<span class="number">3</span>/(<span class="number">3</span>+<span class="number">32</span>*x);</span><br><span class="line">y21=<span class="number">3</span>/(<span class="number">3</span>+<span class="number">16</span>*x);</span><br><span class="line">y32=(<span class="number">3</span>+<span class="number">16</span>*x)/(<span class="number">3</span>+<span class="number">32</span>*x);</span><br><span class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">ezplot(y31,lims)</span><br><span class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">ezplot(y21,lims)</span><br><span class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">3</span>)</span><br><span class="line">ezplot(y32,lims)</span><br></pre></td></tr></table></figure> ���г�����Եõ�����ͼ�� <img src="/2022/04/09/lunwen/4.png" class> ���Ƿ��֣� 1. ��������ͼ�ı�ֵ��ӳ�˲������ڼ���������ʧ��Ч������ֻ��<span class="math inline">\(h=l/d\)</span>�йأ�����<span class="math inline">\(Q_3/Q_1\)</span> ��֪����h��0����ʱ��<span class="math inline">\(Q_3/Q_1\)</span> ��ֵ�����½�����������㲣�����Ŀ�϶Խ�󣬱ȵ��㲣�����ı�ůЧ��Խ�ã����ǳ���һ��ֵ֮�󣬱�ֵ�½��仺����Ч����̫�á�����h����̫�� 2. �ڶ�������Ҳ����ˣ���<span class="math inline">\(h&gt;4\)</span>ʱ��<span class="math inline">\(Q_2/Q_1\)</span> ��ֵ��ʼ�仺�����������߷�ӳ����<span class="math inline">\(Q_3/Q_2\)</span> ��h�����󼴲���֮��Ŀ�϶Խ�����㲣���������㲣�����ı�ůЧ����Խ�ã�����<span class="math inline">\(h&gt;4\)</span>֮��Ч������ô�ã�Ч����Ȼǿ<span class="math inline">\(30\%~40\%\)</span>�����ǺķѵĲ��Ϻܶࡣ���ұȶ��㲣�����ı�ůЧ����߲��˶��٣����Ӿ�����Ч���Ĳ����Ͽ������������ѡ����㲣�����������㲣����</p>
+<center>
+<big><big><big><b><font face="kaiti">����ģ������</font></b></big></big></big>
+</center>
+<p>ģ����ȱ�㣺</p>
+<ol type="1">
+<li>��ģ�;���һ����Ӧ�ü�ֵ��һ����˵�����淶Ҫ��h=l/d��4�����մ�ģ��˫�㲣������ͬ����������ɵĵ��㲣����Լ����97%��Ч��ʮ�ֲ����������㲣��Ч��û��ô�á�</li>
+<li>����ģ�ͼ���Ĵ��ڣ�����������������������µĽ��ۣ��������㲣����ʵ�ʱ�ůЧ����֮��Ȼ���һ���Ĳ�ࡣ
+<center>
+<big><big><big><b><font face="kaiti">�ߡ��ο�����</font></b></big></big></big>
+</center></li>
+</ol>
+<p>[1]����Դ����ѧģ��[M]���������ߵȽ��������磬1993</p>
 <p>[2]������,�����.���㲣������˫�㲣����ʵ���ԱȽ�[J].�Ƽ���,2010(4):237-237239</p>
 <p>[3]����.�������������½����������㲣���ⴰ[J].ǽ�ĸ����뽨������,2005(4):56-56</p>
-</Q_1>]]></content>
+]]></content>
   </entry>
 </search>
