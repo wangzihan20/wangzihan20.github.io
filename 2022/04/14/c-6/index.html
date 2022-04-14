@@ -22,30 +22,28 @@
   <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"wangzihan20.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="人工神经网络是国际学术界十分活跃的前沿研究领域，在控制与优化，预测与管理，识别模式和图像处理、通信等方面都得到了广泛的应用。">
+<meta name="description" content="问题背景1一般的彩色数字图像由 （红）， （绿）， （蓝）三个通道组成，根据下述的运算规则可以将RGB彩色图像转换为单通道的灰度图像。  g(r,g,b)&#x3D;0.299\times r+0.587\times g+0.114\times b上式中 即是由 计算灰度 的函数。请重构运算符“（）”，实现上述转换过程。一般情况下， 取值为[0, 255]范围内的整数。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数学建模|预测方法：神经元网络">
-<meta property="og:url" content="https://wangzihan20.github.io/2022/01/19/jm11/index.html">
+<meta property="og:title" content="C++|作业训练(6)">
+<meta property="og:url" content="https://wangzihan20.github.io/2022/04/14/c-6/index.html">
 <meta property="og:site_name" content="王梓涵的Blog">
-<meta property="og:description" content="人工神经网络是国际学术界十分活跃的前沿研究领域，在控制与优化，预测与管理，识别模式和图像处理、通信等方面都得到了广泛的应用。">
+<meta property="og:description" content="问题背景1一般的彩色数字图像由 （红）， （绿）， （蓝）三个通道组成，根据下述的运算规则可以将RGB彩色图像转换为单通道的灰度图像。  g(r,g,b)&#x3D;0.299\times r+0.587\times g+0.114\times b上式中 即是由 计算灰度 的函数。请重构运算符“（）”，实现上述转换过程。一般情况下， 取值为[0, 255]范围内的整数。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://wangzihan20.github.io/2022/01/19/jm11/1.jpg">
-<meta property="article:published_time" content="2022-01-19T07:27:59.000Z">
-<meta property="article:modified_time" content="2022-03-18T08:52:28.350Z">
+<meta property="article:published_time" content="2022-04-14T01:45:38.000Z">
+<meta property="article:modified_time" content="2022-04-14T08:29:30.200Z">
 <meta property="article:author" content="王梓涵">
-<meta property="article:tag" content="数学建模">
+<meta property="article:tag" content="C++作业训练">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://wangzihan20.github.io/2022/01/19/jm11/1.jpg">
 
 
-<link rel="canonical" href="https://wangzihan20.github.io/2022/01/19/jm11/">
+<link rel="canonical" href="https://wangzihan20.github.io/2022/04/14/c-6/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://wangzihan20.github.io/2022/01/19/jm11/","path":"2022/01/19/jm11/","title":"数学建模|预测方法：神经元网络"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://wangzihan20.github.io/2022/04/14/c-6/","path":"2022/04/14/c-6/","title":"C++|作业训练(6)"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>数学建模|预测方法：神经元网络 | 王梓涵的Blog</title>
+<title>C++|作业训练(6) | 王梓涵的Blog</title>
   
 
 
@@ -268,7 +266,7 @@ mjx-container[display="true"] + br {
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#bp%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="nav-number">1.</span> <span class="nav-text">BP神经网络</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bp%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%AE%AD%E7%BB%83"><span class="nav-number">1.2.</span> <span class="nav-text">BP神经网络训练</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E5%B1%82%E9%9A%90%E5%B1%82%E8%BE%93%E5%87%BA%E5%B1%82%E7%9A%84%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.2.1.</span> <span class="nav-text">输入层、隐层、输出层的参数设置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B%E5%8F%82%E8%80%83"><span class="nav-number">1.3.</span> <span class="nav-text">实例参考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rbf%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="nav-number">2.</span> <span class="nav-text">RBF神经网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E5%8D%9A%E5%AE%A2"><span class="nav-number">3.</span> <span class="nav-text">参考博客</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E8%83%8C%E6%99%AF1"><span class="nav-number">1.</span> <span class="nav-text">问题背景1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4"><span class="nav-number">2.</span> <span class="nav-text">操作步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-number">3.</span> <span class="nav-text">代码实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E8%83%8C%E6%99%AF2"><span class="nav-number">4.</span> <span class="nav-text">问题背景2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4-1"><span class="nav-number">5.</span> <span class="nav-text">操作步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-1"><span class="nav-number">6.</span> <span class="nav-text">代码实现</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -350,7 +348,7 @@ mjx-container[display="true"] + br {
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://wangzihan20.github.io/2022/01/19/jm11/">
+    <link itemprop="mainEntityOfPage" href="https://wangzihan20.github.io/2022/04/14/c-6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/favicon-32x32-next.png">
@@ -363,7 +361,7 @@ mjx-container[display="true"] + br {
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          数学建模|预测方法：神经元网络
+          C++|作业训练(6)
         </h1>
 
         <div class="post-meta-container">
@@ -373,15 +371,9 @@ mjx-container[display="true"] + br {
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2022-01-19 15:27:59" itemprop="dateCreated datePublished" datetime="2022-01-19T15:27:59+08:00">2022-01-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-03-18 16:52:28" itemprop="dateModified" datetime="2022-03-18T16:52:28+08:00">2022-03-18</time>
+      <time title="创建时间：2022-04-14 09:45:38 / 修改时间：16:29:30" itemprop="dateCreated datePublished" datetime="2022-04-14T09:45:38+08:00">2022-04-14</time>
     </span>
 
   
@@ -393,8 +385,8 @@ mjx-container[display="true"] + br {
     </span>
     <span class="post-meta-item-text">Valine：</span>
   
-    <a title="valine" href="/2022/01/19/jm11/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/01/19/jm11/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/04/14/c-6/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/04/14/c-6/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -405,14 +397,14 @@ mjx-container[display="true"] + br {
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.2k</span>
+      <span>2.1k</span>
     </span>
     <span class="post-meta-item" title="估计阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">估计阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>2 分钟</span>
     </span>
 </div>
 
@@ -423,74 +415,29 @@ mjx-container[display="true"] + br {
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>人工神经网络是国际学术界十分活跃的前沿研究领域，在控制与优化，预测与管理，识别模式和图像处理、通信等方面都得到了广泛的应用。</p>
-<span id="more"></span>
-<h2 id="bp神经网络">BP神经网络</h2>
-<h3 id="基本概念">基本概念</h3>
-<p>主要3部分组成： - 输入层 - 隐层 - 输出层</p>
-<p>BP神经网络是一种具有三层或者三层以上的多层神经网络，每一层都由若干个神经元组成，如图所示。</p>
-<img src="/2022/01/19/jm11/1.jpg" class>
-<p>例子来说明：假设题目提供了很多过去的每一天的天气信息，空气湿度、室外温度、天气状况。天气状况主要是小雨，大雨、晴天等信息。现在要求你预测未来某一天是否下雨。</p>
-<p>那么过去每一天的空气湿度、室外温度即为输入层的输入，天气状况为输出层的输出，隐层主要为这两者的对应关系（这个关系不用太关心），在通过BP神经网络训练后，输入未来某一天的空气湿度、室外温度，之后该网络就会根据历史数据，给出一个天气状况的预测值，这就是BP神经网络的经常用法。</p>
-<h3 id="bp神经网络训练">BP神经网络训练</h3>
-<p>一般可以将BP网络的学习算法描述为以下步骤：</p>
-<ul>
-<li><ol type="1">
-<li>初始化网络及学习参数，如设置网络初始权矩阵、学习因子等。</li>
-</ol></li>
-<li><ol start="2" type="1">
-<li>提供训练模式，训练网络，直到满足学习要求。</li>
-</ol></li>
-<li><ol start="3" type="1">
-<li>前向传播过程：对给定训练模式输入，计算网络的输出模式，并与期望模式比较，若有误差，则执行步骤4，否则返回步骤2。</li>
-</ol></li>
-<li><ol start="4" type="1">
-<li>反向传播过程：计算同一层单元的误差，修正权值与阈值，返回步骤2。</li>
-</ol></li>
-</ul>
-<h4 id="输入层隐层输出层的参数设置">输入层、隐层、输出层的参数设置</h4>
-<p>关于这些参数的设置主要是激励函数的选取，这里用matlab工具箱来说明： 此次预测选用MATLAB中的神经网络工具箱进行网络的训练,预测模型的具体实现步骤如下: 将训练样本数据归一化后输入网络,设定参数：</p>
-<ul>
-<li><ol type="1">
-<li>网络隐层激励函数为tansig函数</li>
-</ol></li>
-<li><ol start="2" type="1">
-<li>输出层激励函数为logsig函数</li>
-</ol></li>
-<li><ol start="3" type="1">
-<li>网络训练函数为traingdx</li>
-</ol></li>
-<li><ol start="4" type="1">
-<li>网络性能函数为mse</li>
-</ol></li>
-<li><ol start="5" type="1">
-<li>隐层神经元数量初设为6</li>
-</ol></li>
-<li><ol start="6" type="1">
-<li>网络参数。网络迭代次数epochs为5000次</li>
-</ol></li>
-<li><ol start="7" type="1">
-<li>期望误差goal为0.00000001</li>
-</ol></li>
-<li><ol start="8" type="1">
-<li>学习速率lr为0.01</li>
-</ol></li>
-</ul>
-<p>设定完参数后,开始训练网络</p>
-<p>还有一个隐层中神经元数目的确定，这个可以知道一下，也不难，对于隐层中神经元数目的确定并没有明确的公式, 只有一些经验公式, 神经元个数的最终确定还是需要根据经验和多次实验来确定。本文在选取隐层神经元个数的问题上参照了以下的经验公式:</p>
-<p><span class="math display"><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -0.304ex" xmlns="http://www.w3.org/2000/svg" width="15.693ex" height="2.398ex" role="img" focusable="false" viewbox="0 -925.8 6936.4 1060"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D459" d="M117 59Q117 26 142 26Q179 26 205 131Q211 151 215 152Q217 153 225 153H229Q238 153 241 153T246 151T248 144Q247 138 245 128T234 90T214 43T183 6T137 -11Q101 -11 70 11T38 85Q38 97 39 102L104 360Q167 615 167 623Q167 626 166 628T162 632T157 634T149 635T141 636T132 637T122 637Q112 637 109 637T101 638T95 641T94 647Q94 649 96 661Q101 680 107 682T179 688Q194 689 213 690T243 693T254 694Q266 694 266 686Q266 675 193 386T118 83Q118 81 118 75T117 65V59Z"/></g><g data-mml-node="mo" transform="translate(575.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/></g><g data-mml-node="msqrt" transform="translate(1631.6,0)"><g transform="translate(853,0)"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mo" transform="translate(822.2,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"/></g><g data-mml-node="mi" transform="translate(1822.4,0)"><path data-c="1D45A" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"/></g></g><g data-mml-node="mo" transform="translate(0,65.8)"><path data-c="221A" d="M95 178Q89 178 81 186T72 200T103 230T169 280T207 309Q209 311 212 311H213Q219 311 227 294T281 177Q300 134 312 108L397 -77Q398 -77 501 136T707 565T814 786Q820 800 834 800Q841 800 846 794T853 782V776L620 293L385 -193Q381 -200 366 -200Q357 -200 354 -197Q352 -195 256 15L160 225L144 214Q129 202 113 190T95 178Z"/></g><rect width="2700.4" height="60" x="853" y="805.8"/></g><g data-mml-node="mo" transform="translate(5407.2,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"/></g><g data-mml-node="mi" transform="translate(6407.4,0)"><path data-c="1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"/></g></g></g></svg></mjx-container></span></p>
-<p>其中,n为输入层神经元个数,m为输出层神经元个数,a为[1,10]之间的常数,a可取1-10中的任意数值。</p>
-<h3 id="实例参考">实例参考</h3>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40298902/article/details/100903964?utm_source=app&amp;app_version=4.18.0&amp;code=app_1562916241&amp;uLinkId=usr1mkqgl919blen">菜鸟的数学建模之路（四）：BP神经网络</a></p>
-<h2 id="rbf神经网络">RBF神经网络</h2>
-<p>RBF神经网络具有很强的逼近能力、分类能力和学习速度。其工作原理是把网络看成对未知函数的逼近，任何函数都可以表示成一组基函数的加权和，也即选择各隐层神经元的传输函数，使之构成一组基函数来逼近未知函数</p>
-<p>一般数学建模中使用不到RBF神经网络，在此想了解的请参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/fenglepeng/article/details/106052876?utm_source=app&amp;app_version=4.18.0&amp;code=app_1562916241&amp;uLinkId=usr1mkqgl919blen">深度学习之 RBF神经网络</a>作了解。 作者在今后的机器学习与深度学习的学习记录中，再做详述。</p>
-<h2 id="参考博客">参考博客</h2>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40298902/article/details/100903964?utm_source=app&amp;app_version=4.18.0&amp;code=app_1562916241&amp;uLinkId=usr1mkqgl919blen">菜鸟的数学建模之路（四）：BP神经网络</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/fenglepeng/article/details/106052876?utm_source=app&amp;app_version=4.18.0&amp;code=app_1562916241&amp;uLinkId=usr1mkqgl919blen">深度学习之 RBF神经网络</a></li>
-</ul>
-
+        <h2 id="问题背景1"><a href="#问题背景1" class="headerlink" title="问题背景1"></a>问题背景1</h2><p>一般的彩色数字图像由 （红）， （绿）， （蓝）三个通道组成，根据下述的运算规则可以将RGB彩色图像转换为单通道的灰度图像。</p>
+<script type="math/tex; mode=display">
+g(r,g,b)=0.299\times r+0.587\times g+0.114\times b</script><p>上式中 即是由 计算灰度 的函数。请重构运算符“（）”，实现上述转换过程。一般情况下， 取值为[0, 255]范围内的整数。<br><span id="more"></span></p>
+<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><ol>
+<li>导入标准库头文件与String库。</li>
+<li>创建一个color类</li>
+<li>写好数据初始化</li>
+<li>重载运算符函数实现 </li>
+<li>在主函数中调用 </li>
+<li>输出显示 </li>
+</ol>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">color</span> {</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="keyword">float</span> r, g, b;</span><br><span class="line">	<span class="built_in">color</span>() { r = <span class="number">0.0</span>; g = <span class="number">0.0</span>; b = <span class="number">0.0</span>; }</span><br><span class="line">	<span class="built_in">color</span>(<span class="keyword">float</span> r,<span class="keyword">float</span> g, <span class="keyword">float</span> b) :<span class="built_in">r</span>(r), <span class="built_in">g</span>(g), <span class="built_in">b</span>(b) {}</span><br><span class="line"></span><br><span class="line">};</span><br><span class="line">color <span class="keyword">operator</span>（）(<span class="keyword">const</span> color &amp; col1, <span class="keyword">const</span> color &amp; col2 )</span><br><span class="line">{</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">color</span>(col1.r*col2.r, col1.g * col2.g, col1.b * col2.b );</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{</span><br><span class="line">	<span class="keyword">float</span> r, g, b;</span><br><span class="line">	cout &lt;&lt; <span class="string">"请输入R/G/B值："</span> &lt;&lt; endl; </span><br><span class="line">	cin &gt;&gt; r &gt;&gt; g &gt;&gt; b;</span><br><span class="line">	<span class="keyword">if</span> (r &lt;<span class="number">0</span>||r&gt;<span class="number">255</span>|| g &lt; <span class="number">0</span> || g&gt;<span class="number">255</span>|| b &lt; <span class="number">0</span> || b&gt;<span class="number">255</span>)</span><br><span class="line">	{</span><br><span class="line">		cout &lt;&lt; <span class="string">"ERROR!请输入[0:255]的R/G/B值！"</span> &lt;&lt; endl; <span class="comment">//控制数据合法</span></span><br><span class="line">		</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	{</span><br><span class="line">		color <span class="built_in">col1</span>(r, g, b);</span><br><span class="line">		<span class="function">color <span class="title">col2</span><span class="params">(<span class="number">0.299</span>, <span class="number">0.587</span>, <span class="number">0.114</span>)</span></span>;</span><br><span class="line">		cout &lt;&lt; <span class="string">"单通道的灰度图像的R/G/B值是："</span> &lt;&lt; endl;</span><br><span class="line">		color C = <span class="keyword">operator</span>（）(col1, col2);</span><br><span class="line">		cout &lt;&lt; <span class="string">"R:"</span> &lt;&lt; C.r &lt;&lt; endl;</span><br><span class="line">		cout &lt;&lt; <span class="string">"G:"</span> &lt;&lt; C.g &lt;&lt; endl;</span><br><span class="line">		cout &lt;&lt; <span class="string">"B:"</span> &lt;&lt; C.b &lt;&lt; endl;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="问题背景2"><a href="#问题背景2" class="headerlink" title="问题背景2"></a>问题背景2</h2><p>三维空间中的点可以看作是三维向量，两个三维向量相减可以用这两点之间的距离来表示，构造一个三维向量类multVector，重载“-”减号运算符计算两个三维向量之间的距离。</p>
+<h2 id="操作步骤-1"><a href="#操作步骤-1" class="headerlink" title="操作步骤"></a>操作步骤</h2><ol>
+<li>导入标准库头文件与String库以及cmath库。</li>
+<li>创建一个multVector类</li>
+<li>写好数据初始化与运算符重载函数声明</li>
+<li>重载运算符函数实现 </li>
+<li>在主函数中调用 </li>
+<li>输出显示 </li>
+</ol>
+<h2 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">multVector</span> {</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="keyword">float</span> x, y, z;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">multVector</span>() { x = <span class="number">0.0</span>, y = <span class="number">0.0</span>, z = <span class="number">0.0</span>; }</span><br><span class="line">    <span class="built_in">multVector</span>(<span class="keyword">float</span> x, <span class="keyword">float</span> y, <span class="keyword">float</span> z) :<span class="built_in">x</span>(x), <span class="built_in">y</span>(y), <span class="built_in">z</span>(z) {}</span><br><span class="line">	<span class="keyword">float</span> <span class="keyword">operator</span>- (<span class="keyword">const</span> multVector&amp; m)</span><br><span class="line">	{</span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">sqrt</span>((<span class="keyword">this</span>-&gt;x - m.x) * (<span class="keyword">this</span>-&gt;x - m.x) + (<span class="keyword">this</span>-&gt;y - m.y) * (<span class="keyword">this</span>-&gt;y - m.y) + (<span class="keyword">this</span>-&gt;y - m.z) * (<span class="keyword">this</span>-&gt;y - m.z));</span><br><span class="line">	}</span><br><span class="line">};</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">float</span> x1, y1, z1;</span><br><span class="line">    <span class="keyword">float</span> x2, y2, z2;</span><br><span class="line">    cout &lt;&lt; <span class="string">"请输入第一个点的坐标"</span> &lt;&lt; endl;</span><br><span class="line">    cin &gt;&gt; x1 &gt;&gt; y1 &gt;&gt; z1;</span><br><span class="line">    <span class="function">multVector <span class="title">m1</span><span class="params">(x1, y1, z1)</span></span>;</span><br><span class="line">    cout &lt;&lt; <span class="string">"请输入第二个点的坐标"</span> &lt;&lt; endl;</span><br><span class="line">    cin &gt;&gt; x2 &gt;&gt; y2 &gt;&gt; z2;</span><br><span class="line">    <span class="function">multVector <span class="title">m2</span><span class="params">(x2, y2, z2)</span></span>;</span><br><span class="line">    cout &lt;&lt; <span class="string">"两点之间的距离是："</span> &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; m2 - m1 &lt;&lt; endl;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -527,7 +474,7 @@ mjx-container[display="true"] + br {
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://wangzihan20.github.io/2022/01/19/jm11/" title="数学建模|预测方法：神经元网络">https://wangzihan20.github.io/2022/01/19/jm11/</a>
+      <a href="https://wangzihan20.github.io/2022/04/14/c-6/" title="C++|作业训练(6)">https://wangzihan20.github.io/2022/04/14/c-6/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -553,21 +500,18 @@ mjx-container[display="true"] + br {
 </div>
 
           <div class="post-tags">
-              <a href="/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/" rel="tag"><i class="fa fa-tag"></i> 数学建模</a>
+              <a href="/tags/C-%E4%BD%9C%E4%B8%9A%E8%AE%AD%E7%BB%83/" rel="tag"><i class="fa fa-tag"></i> C++作业训练</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/01/18/java4/" rel="prev" title="Java学习笔记|变量">
-                  <i class="fa fa-chevron-left"></i> Java学习笔记|变量
+                <a href="/2022/04/14/c-5/" rel="prev" title="C++|作业训练(5)">
+                  <i class="fa fa-chevron-left"></i> C++|作业训练(5)
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/01/19/java5/" rel="next" title="Java学习笔记|修饰符和运算符">
-                  Java学习笔记|修饰符和运算符 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -639,7 +583,7 @@ mjx-container[display="true"] + br {
 
 
 
-<script class="next-config" data-name="valine" type="application/json">{"enable":true,"appId":"VmtlzmDMWxYSz8xQ3ycieFj9-gzGzoHsz","appKey":"2tty3gM3OtB9XmGCCpWjwzE6","serverURLs":"https://vmtlzmdm.lc-cn-n1-shared.com","placeholder":"请开始你的表演~","avatar":"retro","meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":false,"comment_count":true,"recordIP":false,"enableQQ":true,"requiredFields":[],"valine":"https://cdn.jsdelivr.net/npm/valine@1.4.16/dist/Valine.min.js","emojiCDN":"https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/","el":"#valine-comments","path":"/2022/01/19/jm11/"}</script>
+<script class="next-config" data-name="valine" type="application/json">{"enable":true,"appId":"VmtlzmDMWxYSz8xQ3ycieFj9-gzGzoHsz","appKey":"2tty3gM3OtB9XmGCCpWjwzE6","serverURLs":"https://vmtlzmdm.lc-cn-n1-shared.com","placeholder":"请开始你的表演~","avatar":"retro","meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":false,"comment_count":true,"recordIP":false,"enableQQ":true,"requiredFields":[],"valine":"https://cdn.jsdelivr.net/npm/valine@1.4.16/dist/Valine.min.js","emojiCDN":"https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/","el":"#valine-comments","path":"/2022/04/14/c-6/"}</script>
 <script>
 document.addEventListener('page:loaded', () => {
   NexT.utils.loadComments(CONFIG.valine.el)
