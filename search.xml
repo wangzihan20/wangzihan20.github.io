@@ -2599,4 +2599,126 @@ g(r,g,b)=0.299\times r+0.587\times g+0.114\times b</script><p>上式中 即是�
         <tag>C++作业训练</tag>
       </tags>
   </entry>
+  <entry>
+    <title>基础内容|循环结构</title>
+    <url>/2022/04/20/teach1/</url>
+    <content><![CDATA[<center>
+<big><big><big><b><font face="TimesnewRoman">循环结构</font></b></big></big></big>
+</center>
+<h3 id="for循环">1.for循环</h3>
+<h4 id="表达式结构">1.1 表达式结构：</h4>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(表达式<span class="number">1</span>；表达式<span class="number">2</span>；表达式<span class="number">3</span>)</span><br><span class="line">&#123;</span><br><span class="line">  语句；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>表达式1：设置初始条件，只执行一次。可以为零个，一个，多个变量设置初值；</p></li>
+<li><p>表达式2：是循环条件表达式，用来判断是否继续循环。在每次执行循环 (for后由一对花括号括起来的)体前先执行此表达式，决定是否继续执行循环；</p></li>
+<li><p>表达式3：在执行完循环体后才进行此语句; <span id="more"></span> 所以可以理解为: <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(循环变量赋初值；循环条件；循环变量增值)</span><br><span class="line">&#123;</span><br><span class="line">   语句；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> 需要注意的是：</p></li>
+</ul>
+<ol type="1">
+<li><p>表达式1可以省略，但后面的分号不能省略；</p></li>
+<li><p>表达式2可以省略（但后面的分号不能省略），不设置和检查循环的条件，此循环可以终止的进行下去，也就认为表达式2始终为真值；</p></li>
+<li><p>表达式3可以省略，但是应该在保证该程序能正常结束；</p></li>
+<li><p>for循环与while循环无条件等价；</p></li>
+</ol>
+<h5 id="例子">1.1.1 例子</h5>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;<span class="comment">//用for循环求从1到100的和</span></span><br><span class="line">    <span class="keyword">int</span> i, sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= <span class="number">100</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        sum += i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;sum=%d\n&quot;</span>, sum);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="解读例子">1.1.2 解读例子</h6>
+<p>for循环的执行顺序如下： 步骤1. 执行i=1，把i初始化为1 步骤2. 判断i&lt;=100是否满足，满足则执行sum += i;（把i的值和sum相加然后赋值给sum），否则退出循环 步骤3. 执行i++，然后i变成2，然后继续执行步骤2，直到退出循环位置</p>
+<h4 id="for循环的嵌套">1.2 for循环的嵌套</h4>
+<p>表达式基本结构： <figure class="highlight isbl"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">for</span>(;;)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="function"><span class="title">for</span>(;;)</span></span><br><span class="line">     &#123;</span><br><span class="line">       ...</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> 总循环次数：外循环次数<em>内循环次数； </em>******</p>
+<h3 id="while循环">2.while循环</h3>
+<p>基本框架： <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">表达式<span class="number">1</span>；</span><br><span class="line"><span class="keyword">while</span>(表达式<span class="number">2</span>)</span><br><span class="line">&#123;</span><br><span class="line">  语句；</span><br><span class="line">  表达式<span class="number">3</span>；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> 1. while后面的语句称为循环体；</p>
+<ol start="2" type="1">
+<li><p>循环体执行的次数由循环条件表达式（表达式2）来确定；</p></li>
+<li><p>当循环条件表达式为真值时就执行循环体；</p></li>
+<li><p>while（1）//是一个死循环</p></li>
+</ol>
+<h4 id="运算符">2.2 运算符：</h4>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">运算符</th>
+<th style="text-align: center;">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">&amp;&amp;</td>
+<td style="text-align: center;">且</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">！</td>
+<td style="text-align: center;">非</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">||</td>
+<td style="text-align: center;">或</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">&gt;</td>
+<td style="text-align: center;">大于</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">&lt;</td>
+<td style="text-align: center;">小于</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">&gt;=</td>
+<td style="text-align: center;">大于等于</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">&lt;=</td>
+<td style="text-align: center;">小于等于</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">==</td>
+<td style="text-align: center;">等于</td>
+</tr>
+</tbody>
+</table>
+<h4 id="例子-1">2.3 例子</h4>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> i=<span class="number">0</span>,sum=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>(i&lt;=<span class="number">100</span>)</span><br><span class="line">&#123;</span><br><span class="line">   sum+=i;</span><br><span class="line">   i++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol type="1">
+<li><p>一定要给i赋初值；</p></li>
+<li><p>如果没有i++那么这个while循环就是个死循环；</p></li>
+</ol>
+<p>只要循环条件表达式为真，就执行循环体；</p>
+<hr>
+<h3 id="do-while循环">3. do while循环</h3>
+<p>基本框架</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">表达式<span class="number">1</span>；</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">&#123;</span><br><span class="line">  语句；</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">while</span>(表达式<span class="number">2</span>)；</span><br></pre></td></tr></table></figure>
+<ol type="1">
+<li><p>先执行一次指定的循环体语句，再判别表达式是否为真，若为真返回重新执行循环体语句。</p></li>
+<li><p>注意while后的()后是有的 #### 3.1 例子 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> i=<span class="number">0</span>,sum=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">&#123;</span><br><span class="line">  sum+=i;</span><br><span class="line">  i++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">while</span>(i&lt;=<span class="number">100</span>);</span><br><span class="line"> </span><br></pre></td></tr></table></figure> 与while循环的区别：</p></li>
+<li><p>while循环先判断再执行；</p></li>
+<li><p>do...while循环先执行再判断；</p></li>
+<li><p>只要第一次进入循环的条件就不满足，那么这两种循环的结果可能不同；</p></li>
+</ol>
+<h4 id="while与do-while的例子">3.2 while与do while的例子</h4>
+<h5 id="while">3.2.1 while</h5>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">0</span>, sum = <span class="number">0</span>;</span><br><span class="line">	scanf_s(<span class="string">&quot;%d&quot;</span>, &amp;i);</span><br><span class="line">	<span class="keyword">while</span> (i &lt; <span class="number">5</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		sum += i;</span><br><span class="line">		i++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;sum=%d&quot;</span>, sum);</span><br><span class="line">	system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="do-while">3.2.2 do while</h5>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">0</span>, sum = <span class="number">0</span>;</span><br><span class="line">	scanf_s(<span class="string">&quot;%d&quot;</span>, &amp;i);</span><br><span class="line">	<span class="keyword">do</span></span><br><span class="line">	&#123;</span><br><span class="line">		sum += i;</span><br><span class="line">		i++;</span><br><span class="line">	&#125; <span class="keyword">while</span> (i &lt; <span class="number">5</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;sum=%d&quot;</span>, sum);</span><br><span class="line">	system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="switch语句">4.switch语句</h3>
+<p>关于C语言中我们做判断的时候一般是会想到if else，常见的if else的写法为： <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(表达书)</span><br><span class="line">｛｝</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(表表达式)</span><br><span class="line">｛｝</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">｛｝</span><br></pre></td></tr></table></figure> 当出现更多的if else嵌套的时候通常会使我们的代码变的较为繁琐，使得我们在观看自己的代码的时候容易逻辑混淆，所以就有了switch的用法，switch的用法在代码中的运用广度没有if else 较强， #### 4.1 基本结构 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">switch</span>(变量或者表达式)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">case</span> 变量情况或者表达式情况<span class="number">1</span>:语句<span class="number">1</span>;<span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> 变量情况或者表达式情况<span class="number">2</span>:语句<span class="number">2</span>;<span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> 变量情况或者表达式情况<span class="number">3</span>:语句<span class="number">3</span>;<span class="keyword">break</span>;</span><br><span class="line">    ……</span><br><span class="line">    <span class="keyword">default</span>: 语句;<span class="comment">//default情况就是指，除了你写的case的情况外的情况</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> 一旦遇到 break，就不再执行 switch 中的任何语句，包括当前分支中的语句和其他分支中的语句；也就是说，整个 switch 执行结束了，接着会执行整个 switch 后面的代码。</p>
+<h4 id="例子-2">4.2 例子</h4>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Input integer number:&quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a);</span><br><span class="line">    <span class="built_in"><span class="keyword">switch</span></span>(a)&#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">1</span>: <span class="built_in">printf</span>(<span class="string">&quot;Monday\n&quot;</span>); <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">2</span>: <span class="built_in">printf</span>(<span class="string">&quot;Tuesday\n&quot;</span>); <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">3</span>: <span class="built_in">printf</span>(<span class="string">&quot;Wednesday\n&quot;</span>); <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">4</span>: <span class="built_in">printf</span>(<span class="string">&quot;Thursday\n&quot;</span>); <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">5</span>: <span class="built_in">printf</span>(<span class="string">&quot;Friday\n&quot;</span>); <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">6</span>: <span class="built_in">printf</span>(<span class="string">&quot;Saturday\n&quot;</span>); <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">7</span>: <span class="built_in">printf</span>(<span class="string">&quot;Sunday\n&quot;</span>); <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">default</span>:<span class="built_in">printf</span>(<span class="string">&quot;error\n&quot;</span>); <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="break与continue">5.break与continue</h3>
+<h4 id="break">5.1 break</h4>
+<p>作用：可以使流程跳到循环之外（结束整个循环过程），接着执行循环体下面的语句。</p>
+<p>但是：<strong>break语句只能用于循环语句和switch语句，不能单独使用</strong> 在多层循环中，一个break语句只向外跳一层 在 C语言 的 switch（开关语句）中，break 语句还可用来在执行完一个 case（分支）后立即跳出当前 switch 结构</p>
+<h5 id="例子-3">5.1.1例子</h5>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(;;)&#123;<span class="comment">// A</span></span><br><span class="line">    <span class="keyword">for</span>(;;) &#123;<span class="comment">// B</span></span><br><span class="line">        <span class="keyword">break</span>;    <span class="comment">// 只跳出B的for循环</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> i;</span><br><span class="line"><span class="keyword">switch</span>（i）&#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">break</span>;    <span class="comment">// 跳出Switch</span></span><br><span class="line">    <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">break</span>; <span class="comment">// 跳出Switch</span></span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">break</span>; <span class="comment">// 跳出Switch</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="continue">5.2continue</h4>
+<p>作用:并不是终止整个循环，只是提前结束本次循环，继续执行下次循环； continue 语句的作用是跳过本次循环中余下尚未执行的语句，立即进行下一次的循环条件判定，可以理解为仅结束本次循环。</p>
+<p>在 while 和 do-while 循环中，continue 语句使得流程直接跳到循环控制条件的测试部分，然后决定循环是否继续进行。在 for 循环中，遇到 continue 后，跳过循环体中余下的语句，而去对 for 语句中的“表达式3”求值，然后进行“表达式2”的条件进行条件测试，最后根据“表达式2”的值来决定 for 循环是否执行。</p>
+<p>在循环体内，不论 continue 是作为何种语句中的语句成分，都将按上述功能执行，这点与 break 有所不同。 ##### 5.2.1例子 <figure class="highlight perl"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(i &lt; <span class="number">10</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		i++;</span><br><span class="line">		<span class="keyword">if</span>(i == <span class="number">5</span>)</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		<span class="keyword">printf</span>(<span class="string">&quot;%d\n&quot;</span>,i);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure> 这段代码输出为：1 2 3 4 6 7 8 9 10</p>
+<p>所以continue的总结：continue是用于终止本次循环的，也就是本次循环中continue后边的代码都不会再执行，而是直接跳转到while语句的判断部分，进行下一次循环的入口判断。</p>
+]]></content>
+      <tags>
+        <tag>c及c++基础内容</tag>
+      </tags>
+  </entry>
 </search>

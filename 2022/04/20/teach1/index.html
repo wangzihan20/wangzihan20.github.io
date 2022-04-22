@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-undefined.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"wangzihan20.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="循环结构  1.for循环 1.1 表达式结构： 1234for(表达式1；表达式2；表达式3)&amp;#123;  语句；&amp;#125;  表达式1：设置初始条件，只执行一次。可以为零个，一个，多个变量设置初值； 表达式2：是循环条件表达式，用来判断是否继续循环。在每次执行循环 (for后由一对花括号括起来的)体前先执行此表达式，决定是否继续执行循环； 表达式3：在执行完循环体后才进">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基础内容|循环结构">
+<meta property="og:url" content="https://wangzihan20.github.io/2022/04/20/teach1/index.html">
+<meta property="og:site_name" content="王梓涵的Blog">
+<meta property="og:description" content="循环结构  1.for循环 1.1 表达式结构： 1234for(表达式1；表达式2；表达式3)&amp;#123;  语句；&amp;#125;  表达式1：设置初始条件，只执行一次。可以为零个，一个，多个变量设置初值； 表达式2：是循环条件表达式，用来判断是否继续循环。在每次执行循环 (for后由一对花括号括起来的)体前先执行此表达式，决定是否继续执行循环； 表达式3：在执行完循环体后才进">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-04-20T01:03:15.000Z">
+<meta property="article:modified_time" content="2022-04-22T05:51:55.276Z">
+<meta property="article:author" content="王梓涵">
+<meta property="article:tag" content="c及c++基础内容">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://wangzihan20.github.io/2022/04/20/teach1/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://wangzihan20.github.io/2022/04/20/teach1/","path":"2022/04/20/teach1/","title":"基础内容|循环结构"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>基础内容|循环结构 | 王梓涵的Blog</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">王梓涵的Blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-博客主页"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>博客主页</a></li>
+        <li class="menu-item menu-item-文章归档"><a href="/archives" rel="section"><i class="fa fa-archive fa-fw"></i>文章归档</a></li>
+        <li class="menu-item menu-item-个人简历"><a href="/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86/" rel="section"><i class="fa fa-address-card fa-fw"></i>个人简历</a></li>
+        <li class="menu-item menu-item-标签"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-关于"><a href="/about/" rel="section"><i class="fa fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-友链"><a href="/links" rel="section"><i class="fa fa-eye fa-fw"></i>友链</a></li>
+        <li class="menu-item menu-item-杂记"><a href="/test1" rel="section"><i class="fa fa-cube fa-fw"></i>杂记</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          目录在此
+        </li>
+        <li class="sidebar-nav-overview">
+          博客情况
+        </li>
+      </ul>
+    <div id="music163player">
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="//music.163.com/outchain/player?type=2&id=38358214&auto=0&height=66">
+      </iframe>
+    </div>
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#for%E5%BE%AA%E7%8E%AF"><span class="nav-number">1.</span> <span class="nav-text">1.for循环</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%BB%93%E6%9E%84"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 表达式结构：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1.1 例子</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%A7%A3%E8%AF%BB%E4%BE%8B%E5%AD%90"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">1.1.2 解读例子</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#for%E5%BE%AA%E7%8E%AF%E7%9A%84%E5%B5%8C%E5%A5%97"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 for循环的嵌套</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#while%E5%BE%AA%E7%8E%AF"><span class="nav-number">2.</span> <span class="nav-text">2.while循环</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">2.1.</span> <span class="nav-text">2.2 运算符：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90-1"><span class="nav-number">2.2.</span> <span class="nav-text">2.3 例子</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#do-while%E5%BE%AA%E7%8E%AF"><span class="nav-number">3.</span> <span class="nav-text">3. do while循环</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#while%E4%B8%8Edo-while%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="nav-number">3.1.</span> <span class="nav-text">3.2 while与do while的例子</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#while"><span class="nav-number">3.1.1.</span> <span class="nav-text">3.2.1 while</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#do-while"><span class="nav-number">3.1.2.</span> <span class="nav-text">3.2.2 do while</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#switch%E8%AF%AD%E5%8F%A5"><span class="nav-number">4.</span> <span class="nav-text">4.switch语句</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90-2"><span class="nav-number">4.1.</span> <span class="nav-text">4.2 例子</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#break%E4%B8%8Econtinue"><span class="nav-number">5.</span> <span class="nav-text">5.break与continue</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#break"><span class="nav-number">5.1.</span> <span class="nav-text">5.1 break</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90-3"><span class="nav-number">5.1.1.</span> <span class="nav-text">5.1.1例子</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#continue"><span class="nav-number">5.2.</span> <span class="nav-text">5.2continue</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="王梓涵"
+      src="/images/favicon-32x32-next.png">
+  <p class="site-author-name" itemprop="name">王梓涵</p>
+  <div class="site-description" itemprop="description">一个日常记录学习的blog……</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/wangzihan20" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;wangzihan20" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:2018952617@qq.com" title="E-Mail → mailto:2018952617@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/" title="Google → https:&#x2F;&#x2F;plus.google.com" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/CODE_WangZIli?spm=1000.2115.3001.5343" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;CODE_WangZIli?spm&#x3D;1000.2115.3001.5343" rel="noopener" target="_blank"><i class="fa fa-anchor fa-fw"></i>CSDN</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://wangzihan20.github.io/2022/04/20/teach1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/favicon-32x32-next.png">
+      <meta itemprop="name" content="王梓涵">
+      <meta itemprop="description" content="一个日常记录学习的blog……">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="王梓涵的Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          基础内容|循环结构
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-04-20 09:03:15" itemprop="dateCreated datePublished" datetime="2022-04-20T09:03:15+08:00">2022-04-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-22 13:51:55" itemprop="dateModified" datetime="2022-04-22T13:51:55+08:00">2022-04-22</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Valine：</span>
+  
+    <a title="valine" href="/2022/04/20/teach1/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/04/20/teach1/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.7k</span>
+    </span>
+    <span class="post-meta-item" title="估计阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">估计阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <center>
+<big><big><big><b><font face="TimesnewRoman">循环结构</font></b></big></big></big>
+</center>
+<h3 id="for循环">1.for循环</h3>
+<h4 id="表达式结构">1.1 表达式结构：</h4>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(表达式<span class="number">1</span>；表达式<span class="number">2</span>；表达式<span class="number">3</span>)</span><br><span class="line">&#123;</span><br><span class="line">  语句；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>表达式1：设置初始条件，只执行一次。可以为零个，一个，多个变量设置初值；</p></li>
+<li><p>表达式2：是循环条件表达式，用来判断是否继续循环。在每次执行循环 (for后由一对花括号括起来的)体前先执行此表达式，决定是否继续执行循环；</p></li>
+<li><p>表达式3：在执行完循环体后才进行此语句; <span id="more"></span> 所以可以理解为: <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(循环变量赋初值；循环条件；循环变量增值)</span><br><span class="line">&#123;</span><br><span class="line">   语句；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> 需要注意的是：</p></li>
+</ul>
+<ol type="1">
+<li><p>表达式1可以省略，但后面的分号不能省略；</p></li>
+<li><p>表达式2可以省略（但后面的分号不能省略），不设置和检查循环的条件，此循环可以终止的进行下去，也就认为表达式2始终为真值；</p></li>
+<li><p>表达式3可以省略，但是应该在保证该程序能正常结束；</p></li>
+<li><p>for循环与while循环无条件等价；</p></li>
+</ol>
+<h5 id="例子">1.1.1 例子</h5>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;<span class="comment">//用for循环求从1到100的和</span></span><br><span class="line">    <span class="keyword">int</span> i, sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= <span class="number">100</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        sum += i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;sum=%d\n&quot;</span>, sum);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="解读例子">1.1.2 解读例子</h6>
+<p>for循环的执行顺序如下： 步骤1. 执行i=1，把i初始化为1 步骤2. 判断i&lt;=100是否满足，满足则执行sum += i;（把i的值和sum相加然后赋值给sum），否则退出循环 步骤3. 执行i++，然后i变成2，然后继续执行步骤2，直到退出循环位置</p>
+<h4 id="for循环的嵌套">1.2 for循环的嵌套</h4>
+<p>表达式基本结构： <figure class="highlight isbl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">for</span>(;;)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="function"><span class="title">for</span>(;;)</span></span><br><span class="line">     &#123;</span><br><span class="line">       ...</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> 总循环次数：外循环次数<em>内循环次数； </em>******</p>
+<h3 id="while循环">2.while循环</h3>
+<p>基本框架： <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">表达式<span class="number">1</span>；</span><br><span class="line"><span class="keyword">while</span>(表达式<span class="number">2</span>)</span><br><span class="line">&#123;</span><br><span class="line">  语句；</span><br><span class="line">  表达式<span class="number">3</span>；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> 1. while后面的语句称为循环体；</p>
+<ol start="2" type="1">
+<li><p>循环体执行的次数由循环条件表达式（表达式2）来确定；</p></li>
+<li><p>当循环条件表达式为真值时就执行循环体；</p></li>
+<li><p>while（1）//是一个死循环</p></li>
+</ol>
+<h4 id="运算符">2.2 运算符：</h4>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">运算符</th>
+<th style="text-align: center;">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">&amp;&amp;</td>
+<td style="text-align: center;">且</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">！</td>
+<td style="text-align: center;">非</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">||</td>
+<td style="text-align: center;">或</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">&gt;</td>
+<td style="text-align: center;">大于</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">&lt;</td>
+<td style="text-align: center;">小于</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">&gt;=</td>
+<td style="text-align: center;">大于等于</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">&lt;=</td>
+<td style="text-align: center;">小于等于</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">==</td>
+<td style="text-align: center;">等于</td>
+</tr>
+</tbody>
+</table>
+<h4 id="例子-1">2.3 例子</h4>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i=<span class="number">0</span>,sum=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>(i&lt;=<span class="number">100</span>)</span><br><span class="line">&#123;</span><br><span class="line">   sum+=i;</span><br><span class="line">   i++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol type="1">
+<li><p>一定要给i赋初值；</p></li>
+<li><p>如果没有i++那么这个while循环就是个死循环；</p></li>
+</ol>
+<p>只要循环条件表达式为真，就执行循环体；</p>
+<hr>
+<h3 id="do-while循环">3. do while循环</h3>
+<p>基本框架</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">表达式<span class="number">1</span>；</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">&#123;</span><br><span class="line">  语句；</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">while</span>(表达式<span class="number">2</span>)；</span><br></pre></td></tr></table></figure>
+<ol type="1">
+<li><p>先执行一次指定的循环体语句，再判别表达式是否为真，若为真返回重新执行循环体语句。</p></li>
+<li><p>注意while后的()后是有的 #### 3.1 例子 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i=<span class="number">0</span>,sum=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">&#123;</span><br><span class="line">  sum+=i;</span><br><span class="line">  i++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">while</span>(i&lt;=<span class="number">100</span>);</span><br><span class="line"> </span><br></pre></td></tr></table></figure> 与while循环的区别：</p></li>
+<li><p>while循环先判断再执行；</p></li>
+<li><p>do...while循环先执行再判断；</p></li>
+<li><p>只要第一次进入循环的条件就不满足，那么这两种循环的结果可能不同；</p></li>
+</ol>
+<h4 id="while与do-while的例子">3.2 while与do while的例子</h4>
+<h5 id="while">3.2.1 while</h5>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">0</span>, sum = <span class="number">0</span>;</span><br><span class="line">	scanf_s(<span class="string">&quot;%d&quot;</span>, &amp;i);</span><br><span class="line">	<span class="keyword">while</span> (i &lt; <span class="number">5</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		sum += i;</span><br><span class="line">		i++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;sum=%d&quot;</span>, sum);</span><br><span class="line">	system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="do-while">3.2.2 do while</h5>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">0</span>, sum = <span class="number">0</span>;</span><br><span class="line">	scanf_s(<span class="string">&quot;%d&quot;</span>, &amp;i);</span><br><span class="line">	<span class="keyword">do</span></span><br><span class="line">	&#123;</span><br><span class="line">		sum += i;</span><br><span class="line">		i++;</span><br><span class="line">	&#125; <span class="keyword">while</span> (i &lt; <span class="number">5</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;sum=%d&quot;</span>, sum);</span><br><span class="line">	system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="switch语句">4.switch语句</h3>
+<p>关于C语言中我们做判断的时候一般是会想到if else，常见的if else的写法为： <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(表达书)</span><br><span class="line">｛｝</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(表表达式)</span><br><span class="line">｛｝</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">｛｝</span><br></pre></td></tr></table></figure> 当出现更多的if else嵌套的时候通常会使我们的代码变的较为繁琐，使得我们在观看自己的代码的时候容易逻辑混淆，所以就有了switch的用法，switch的用法在代码中的运用广度没有if else 较强， #### 4.1 基本结构 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span>(变量或者表达式)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">case</span> 变量情况或者表达式情况<span class="number">1</span>:语句<span class="number">1</span>;<span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> 变量情况或者表达式情况<span class="number">2</span>:语句<span class="number">2</span>;<span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> 变量情况或者表达式情况<span class="number">3</span>:语句<span class="number">3</span>;<span class="keyword">break</span>;</span><br><span class="line">    ……</span><br><span class="line">    <span class="keyword">default</span>: 语句;<span class="comment">//default情况就是指，除了你写的case的情况外的情况</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> 一旦遇到 break，就不再执行 switch 中的任何语句，包括当前分支中的语句和其他分支中的语句；也就是说，整个 switch 执行结束了，接着会执行整个 switch 后面的代码。</p>
+<h4 id="例子-2">4.2 例子</h4>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Input integer number:&quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a);</span><br><span class="line">    <span class="built_in"><span class="keyword">switch</span></span>(a)&#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">1</span>: <span class="built_in">printf</span>(<span class="string">&quot;Monday\n&quot;</span>); <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">2</span>: <span class="built_in">printf</span>(<span class="string">&quot;Tuesday\n&quot;</span>); <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">3</span>: <span class="built_in">printf</span>(<span class="string">&quot;Wednesday\n&quot;</span>); <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">4</span>: <span class="built_in">printf</span>(<span class="string">&quot;Thursday\n&quot;</span>); <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">5</span>: <span class="built_in">printf</span>(<span class="string">&quot;Friday\n&quot;</span>); <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">6</span>: <span class="built_in">printf</span>(<span class="string">&quot;Saturday\n&quot;</span>); <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">7</span>: <span class="built_in">printf</span>(<span class="string">&quot;Sunday\n&quot;</span>); <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">default</span>:<span class="built_in">printf</span>(<span class="string">&quot;error\n&quot;</span>); <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="break与continue">5.break与continue</h3>
+<h4 id="break">5.1 break</h4>
+<p>作用：可以使流程跳到循环之外（结束整个循环过程），接着执行循环体下面的语句。</p>
+<p>但是：<strong>break语句只能用于循环语句和switch语句，不能单独使用</strong> 在多层循环中，一个break语句只向外跳一层 在 C语言 的 switch（开关语句）中，break 语句还可用来在执行完一个 case（分支）后立即跳出当前 switch 结构</p>
+<h5 id="例子-3">5.1.1例子</h5>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(;;)&#123;<span class="comment">// A</span></span><br><span class="line">    <span class="keyword">for</span>(;;) &#123;<span class="comment">// B</span></span><br><span class="line">        <span class="keyword">break</span>;    <span class="comment">// 只跳出B的for循环</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i;</span><br><span class="line"><span class="keyword">switch</span>（i）&#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">break</span>;    <span class="comment">// 跳出Switch</span></span><br><span class="line">    <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">break</span>; <span class="comment">// 跳出Switch</span></span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">break</span>; <span class="comment">// 跳出Switch</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="continue">5.2continue</h4>
+<p>作用:并不是终止整个循环，只是提前结束本次循环，继续执行下次循环； continue 语句的作用是跳过本次循环中余下尚未执行的语句，立即进行下一次的循环条件判定，可以理解为仅结束本次循环。</p>
+<p>在 while 和 do-while 循环中，continue 语句使得流程直接跳到循环控制条件的测试部分，然后决定循环是否继续进行。在 for 循环中，遇到 continue 后，跳过循环体中余下的语句，而去对 for 语句中的“表达式3”求值，然后进行“表达式2”的条件进行条件测试，最后根据“表达式2”的值来决定 for 循环是否执行。</p>
+<p>在循环体内，不论 continue 是作为何种语句中的语句成分，都将按上述功能执行，这点与 break 有所不同。 ##### 5.2.1例子 <figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(i &lt; <span class="number">10</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		i++;</span><br><span class="line">		<span class="keyword">if</span>(i == <span class="number">5</span>)</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		<span class="keyword">printf</span>(<span class="string">&quot;%d\n&quot;</span>,i);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure> 这段代码输出为：1 2 3 4 6 7 8 9 10</p>
+<p>所以continue的总结：continue是用于终止本次循环的，也就是本次循环中continue后边的代码都不会再执行，而是直接跳转到while语句的判断部分，进行下一次循环的入口判断。</p>
+
+    </div>
+
+    
+    
+    
+
+
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/true" alt="王梓涵 enable">
+        <span>enable</span>
+      </div>
+      <div>
+        <img src="/%E5%9D%9A%E6%8C%81%E5%8E%9F%E5%88%9B%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB~%E6%82%A8%E7%9A%84%E6%94%AF%E6%8C%81%E5%B0%86%E9%BC%93%E5%8A%B1%E6%88%91%E7%BB%A7%E7%BB%AD%E5%88%9B%E4%BD%9C%EF%BC%81" alt="王梓涵 comment">
+        <span>comment</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>王梓涵
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://wangzihan20.github.io/2022/04/20/teach1/" title="基础内容|循环结构">https://wangzihan20.github.io/2022/04/20/teach1/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+          <span class="icon">
+            <i class="fab fa-weixin"></i>
+          </span>
+
+          <span class="label">WeChat</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/c%E5%8F%8Ac-%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/" rel="tag"><i class="fa fa-tag"></i> c及c++基础内容</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/04/14/c-6/" rel="prev" title="C++|作业训练(6)">
+                  <i class="fa fa-chevron-left"></i> C++|作业训练(6)
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="valine-comments"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">王梓涵</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">137k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:05</span>
+  </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+
+<script class="next-config" data-name="valine" type="application/json">{"enable":true,"appId":"VmtlzmDMWxYSz8xQ3ycieFj9-gzGzoHsz","appKey":"2tty3gM3OtB9XmGCCpWjwzE6","serverURLs":"https://vmtlzmdm.lc-cn-n1-shared.com","placeholder":"请开始你的表演~","avatar":"retro","meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":false,"comment_count":true,"recordIP":false,"enableQQ":true,"requiredFields":[],"valine":"https://cdn.jsdelivr.net/npm/valine@1.4.16/dist/Valine.min.js","emojiCDN":"https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/","el":"#valine-comments","path":"/2022/04/20/teach1/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.valine.el)
+    .then(() => NexT.utils.getScript(
+      'https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js',
+      { condition: window.Valine }
+    ))
+    .then(() => {
+      new Valine(CONFIG.valine);
+    });
+});
+</script>
+
+  
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":250,"height":500},"mobile":{"show":true},"log":false});</script></body>
+</html>
