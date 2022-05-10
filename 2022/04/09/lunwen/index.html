@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://wangzihan20.github.io/2022/04/09/lunwen/3.png">
 <meta property="og:image" content="https://wangzihan20.github.io/2022/04/09/lunwen/4.png">
 <meta property="article:published_time" content="2022-04-09T13:33:15.000Z">
-<meta property="article:modified_time" content="2022-04-11T04:21:59.515Z">
+<meta property="article:modified_time" content="2022-05-10T01:32:57.995Z">
 <meta property="article:author" content="王梓涵">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://wangzihan20.github.io/2022/04/09/lunwen/1.png">
@@ -270,7 +270,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-11 12:21:59" itemprop="dateModified" datetime="2022-04-11T12:21:59+08:00">2022-04-11</time>
+      <time title="修改时间：2022-05-10 09:32:57" itemprop="dateModified" datetime="2022-05-10T09:32:57+08:00">2022-05-10</time>
     </span>
 
   
@@ -338,12 +338,12 @@
 <li>假设窗户的密封性很好，且玻璃之间的空气没有流动，传导过程没有对流，忽略辐射散热；</li>
 <li>玻璃材质均匀，热传导系数是常数；</li>
 <li>室内温度与室外温度保持不变，热传导开始即稳定；</li>
-<li>室内热量从房门或者其他途径损失忽略不计。
+<li>室内热量从房门或者其他途径损失忽略不计。</li>
+</ul>
 <center>
 <big><big><big><b><font face="kaiti">四、符号说明</font></b></big></big></big>
 </center>
-符号说明要点如下：</li>
-</ul>
+<p>符号说明要点如下：</p>
 <table>
 <thead>
 <tr class="header">
@@ -392,7 +392,7 @@ T_b1-T_2=d/k_1  Q_3
 五个式子相加有： <span class="math display">\[
 T_1-T_2=(3d/k_1 +2l/k_2 )*Q_3
 \]</span> 设 <span class="math display">\[
-h=l/d,s=h k_1/k_2 
+h=l/d,s=h k_1/k_2
 \]</span> 则得到 <span class="math display">\[
 Q_3=k_1  (T_1-T_2)/((3+2s)d)
 \]</span>   对于双层玻璃，有如下示意图： <img src="/2022/04/09/lunwen/2.png" class>   我们可以做如下计算： <span class="math display">\[
@@ -404,7 +404,7 @@ T_b-T_2=1.5d/k_1  Q_2
 \]</span> 三式相加得到： <span class="math display">\[
 T_1-T_2=(3d/k_1 +l/k_2 ) Q_2
 \]</span> 设 <span class="math display">\[
-h=l/d,s=h k_1/k_2 
+h=l/d,s=h k_1/k_2
 \]</span> 则得到 <span class="math display">\[
 Q_2=k_1  (T_1-T_2)/((3+s)d)
 \]</span>   对于单层玻璃，有如下示意图： <img src="/2022/04/09/lunwen/3.png" class>   可以做如下简单计算： <span class="math display">\[
@@ -443,18 +443,24 @@ Q_2/Q_1 =3/(3+16s)
 Q_3/Q_2 =(3+16s)/(3+32s)
 \]</span> 其中 <span class="math display">\[
 h=l/d
-\]</span> 利用matlab绘图，可视化表达，程序如下 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">clear</span><br><span class="line">syms x</span><br><span class="line">lims=[<span class="number">0</span> <span class="number">8</span>];</span><br><span class="line">y31=<span class="number">3</span>/(<span class="number">3</span>+<span class="number">32</span>*x);</span><br><span class="line">y21=<span class="number">3</span>/(<span class="number">3</span>+<span class="number">16</span>*x);</span><br><span class="line">y32=(<span class="number">3</span>+<span class="number">16</span>*x)/(<span class="number">3</span>+<span class="number">32</span>*x);</span><br><span class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">ezplot(y31,lims)</span><br><span class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">ezplot(y21,lims)</span><br><span class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">3</span>)</span><br><span class="line">ezplot(y32,lims)</span><br></pre></td></tr></table></figure> 运行程序可以得到如下图像 <img src="/2022/04/09/lunwen/4.png" class> 我们发现： 1. 上面三个图的比值反映了玻璃窗在减少热量损失的效果。它只与<span class="math inline">\(h=l/d\)</span>有关，且由<span class="math inline">\(Q_3/Q_1\)</span> 可知，当h由0增大时，<span class="math inline">\(Q_3/Q_1\)</span> 比值快速下降，则表明三层玻璃窗的空隙越大，比单层玻璃窗的保暖效果越好，但是超过一定值之后，比值下降变缓慢，效果不太好。所以h不宜太大。 2. 第二条曲线也是如此，在<span class="math inline">\(h&gt;4\)</span>时，<span class="math inline">\(Q_2/Q_1\)</span> 比值开始变缓，第三条曲线反映的是<span class="math inline">\(Q_3/Q_2\)</span> 随h的增大即玻璃之间的空隙越大，三层玻璃窗比两层玻璃窗的保暖效果就越好，不过<span class="math inline">\(h&gt;4\)</span>之后，效果不那么好，效果虽然强<span class="math inline">\(30\%~40\%\)</span>，但是耗费的材料很多。而且比二层玻璃窗的保暖效果提高不了多少，所从经济与效果的层面上看，多数居民会选择二层玻璃而不是三层玻璃。</p>
+\]</span> 利用matlab绘图，可视化表达，程序如下</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">clear</span><br><span class="line">syms x</span><br><span class="line">lims=[<span class="number">0</span> <span class="number">8</span>];</span><br><span class="line">y31=<span class="number">3</span>/(<span class="number">3</span>+<span class="number">32</span>*x);</span><br><span class="line">y21=<span class="number">3</span>/(<span class="number">3</span>+<span class="number">16</span>*x);</span><br><span class="line">y32=(<span class="number">3</span>+<span class="number">16</span>*x)/(<span class="number">3</span>+<span class="number">32</span>*x);</span><br><span class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">ezplot(y31,lims)</span><br><span class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">ezplot(y21,lims)</span><br><span class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">3</span>)</span><br><span class="line">ezplot(y32,lims)</span><br></pre></td></tr></table></figure>
+<p>运行程序可以得到如下图像 <img src="/2022/04/09/lunwen/4.png" class> 我们发现：</p>
+<ol type="1">
+<li>上面三个图的比值反映了玻璃窗在减少热量损失的效果。它只与<span class="math inline">\(h=l/d\)</span>有关，且由<span class="math inline">\(Q_3/Q_1\)</span> 可知，当h由0增大时，<span class="math inline">\(Q_3/Q_1\)</span> 比值快速下降，则表明三层玻璃窗的空隙越大，比单层玻璃窗的保暖效果越好，但是超过一定值之后，比值下降变缓慢，效果不太好。所以h不宜太大。</li>
+<li>第二条曲线也是如此，在<span class="math inline">\(h&gt;4\)</span>时，<span class="math inline">\(Q_2/Q_1\)</span> 比值开始变缓，第三条曲线反映的是<span class="math inline">\(Q_3/Q_2\)</span> 随h的增大即玻璃之间的空隙越大，三层玻璃窗比两层玻璃窗的保暖效果就越好，不过<span class="math inline">\(h&gt;4\)</span>之后，效果不那么好，效果虽然强<span class="math inline">\(30\%~40\%\)</span>，但是耗费的材料很多。而且比二层玻璃窗的保暖效果提高不了多少，所从经济与效果的层面上看，多数居民会选择二层玻璃而不是三层玻璃。</li>
+</ol>
 <center>
 <big><big><big><b><font face="kaiti">六、模型评价</font></b></big></big></big>
 </center>
 <p>模型优缺点：</p>
 <ol type="1">
 <li>本模型具有一定的应用价值，一般来说建筑规范要求h=l/d≈4，按照此模型双层玻璃窗比同样多材料做成的单层玻璃节约热量97%，效果十分不错，而三层玻璃效果没这么好。</li>
-<li>由于模型假设的存在，上述分析都是在理想情况下的结论，所以三层玻璃的实际保暖效果与之相比会有一定的差距。
+<li>由于模型假设的存在，上述分析都是在理想情况下的结论，所以三层玻璃的实际保暖效果与之相比会有一定的差距。</li>
+</ol>
 <center>
 <big><big><big><b><font face="kaiti">七、参考文献</font></b></big></big></big>
-</center></li>
-</ol>
+</center>
 <p>[1]姜启源．数学模型[M]．北京：高等教育出版社，1993</p>
 <p>[2]黄丽莉,侯君芳.三层玻璃窗与双层玻璃窗实用性比较[J].科技风,2010(4):237-237239</p>
 <p>[3]刘敏.哈尔滨：节能新建筑须用三层玻璃外窗[J].墙材革新与建筑节能,2005(4):56-56</p>
@@ -565,13 +571,13 @@ h=l/d
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">149k</span>
+    <span title="站点总字数">163k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:16</span>
+    <span title="站点阅读时长">2:28</span>
   </span>
 </div>
 
