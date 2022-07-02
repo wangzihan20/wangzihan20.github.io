@@ -22,17 +22,17 @@
   <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"wangzihan20.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="ʲô�ǵݹ飿 �ݹ�͵�����������ϵ �ܶ�����ʵ����̫����ݹ�������ľ����𣬵���ָ��������ĳһ��������һֱѭ�� ���� 1for(int i&#x3D;0;i&lt;100;i++&gt;) ָ�ľ��ǵ���100�Σ�����100�ξ�ֹͣ�ˡ� ���ݹ鲻һ�����ݹ�ָ���ǵ����Լ����������磺 12345int">
+<meta name="description" content="什么是递归？ 递归和迭代的区别联系 很多人其实都不太清楚递归与迭代的具体差别，迭代指的是你在某一个条件下一直循环 比如">
 <meta property="og:type" content="article">
-<meta property="og:title" content="�㷨����|���εݹ�">
+<meta property="og:title" content="算法讲解|分治递归">
 <meta property="og:url" content="https://wangzihan20.github.io/2022/05/10/dpt1/index.html">
 <meta property="og:site_name" content="王梓涵的Blog">
-<meta property="og:description" content="ʲô�ǵݹ飿 �ݹ�͵�����������ϵ �ܶ�����ʵ����̫����ݹ�������ľ����𣬵���ָ��������ĳһ��������һֱѭ�� ���� 1for(int i&#x3D;0;i&lt;100;i++&gt;) ָ�ľ��ǵ���100�Σ�����100�ξ�ֹͣ�ˡ� ���ݹ鲻һ�����ݹ�ָ���ǵ����Լ����������磺 12345int">
+<meta property="og:description" content="什么是递归？ 递归和迭代的区别联系 很多人其实都不太清楚递归与迭代的具体差别，迭代指的是你在某一个条件下一直循环 比如">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-05-10T06:22:49.000Z">
-<meta property="article:modified_time" content="2022-05-10T14:05:22.090Z">
+<meta property="article:modified_time" content="2022-07-02T11:56:57.342Z">
 <meta property="article:author" content="王梓涵">
-<meta property="article:tag" content="�㷨���">
+<meta property="article:tag" content="算法设计">
 <meta name="twitter:card" content="summary">
 
 
@@ -40,10 +40,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://wangzihan20.github.io/2022/05/10/dpt1/","path":"2022/05/10/dpt1/","title":"�㷨����|���εݹ�"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://wangzihan20.github.io/2022/05/10/dpt1/","path":"2022/05/10/dpt1/","title":"算法讲解|分治递归"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>�㷨����|���εݹ� | 王梓涵的Blog</title>
+<title>算法讲解|分治递归 | 王梓涵的Blog</title>
   
 
 
@@ -154,7 +154,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%CA%B2%C3%B4%C7%B5%DD%B9%E9%A3%BF"><span class="nav-number">1.</span> <span class="nav-text">ʲô�ǵݹ飿</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%DD%B9%CF%B5"><span class="nav-number">2.</span> <span class="nav-text">�ݹ�͵�����������ϵ</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%DD%B9"><span class="nav-number">3.</span> <span class="nav-text">�ݹ�</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%D9%B81"><span class="nav-number">3.0.1.</span> <span class="nav-text">�ٸ�����1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%D9%B82"><span class="nav-number">3.0.2.</span> <span class="nav-text">�ٸ�����2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%DD%B9%C5%BC"><span class="nav-number">3.0.3.</span> <span class="nav-text">�ݹ��Ż�</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%CA%B2%C3%B4%C6%BF%CF%83"><span class="nav-number">4.</span> <span class="nav-text">ʲô�Ƿ��Σ�</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#section"><span class="nav-number">4.0.1.</span> <span class="nav-text">����1</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E9%80%92%E5%BD%92"><span class="nav-number">1.</span> <span class="nav-text">什么是递归？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%92%E5%BD%92%E5%92%8C%E8%BF%AD%E4%BB%A3%E7%9A%84%E5%8C%BA%E5%88%AB%E8%81%94%E7%B3%BB"><span class="nav-number">2.</span> <span class="nav-text">递归和迭代的区别联系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%92%E5%BD%92"><span class="nav-number">3.</span> <span class="nav-text">递归</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BE%E4%B8%AA%E4%BE%8B%E5%AD%901"><span class="nav-number">3.0.1.</span> <span class="nav-text">举个例子1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BE%E4%B8%AA%E4%BE%8B%E5%AD%902"><span class="nav-number">3.0.2.</span> <span class="nav-text">举个例子2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%92%E5%BD%92%E4%BC%98%E5%8C%96"><span class="nav-number">3.0.3.</span> <span class="nav-text">递归优化</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%88%86%E6%B2%BB"><span class="nav-number">4.</span> <span class="nav-text">什么是分治？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%8B%E5%AD%901"><span class="nav-number">4.0.1.</span> <span class="nav-text">例子1</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -179,7 +179,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -249,7 +249,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          �㷨����|���εݹ�
+          算法讲解|分治递归
         </h1>
 
         <div class="post-meta-container">
@@ -259,9 +259,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-05-10 14:22:49 / 修改时间：22:05:22" itemprop="dateCreated datePublished" datetime="2022-05-10T14:22:49+08:00">2022-05-10</time>
+      <time title="创建时间：2022-05-10 14:22:49" itemprop="dateCreated datePublished" datetime="2022-05-10T14:22:49+08:00">2022-05-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-07-02 19:56:57" itemprop="dateModified" datetime="2022-07-02T19:56:57+08:00">2022-07-02</time>
     </span>
 
   
@@ -285,7 +291,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>3.8k</span>
+      <span>2.9k</span>
     </span>
     <span class="post-meta-item" title="估计阅读时长">
       <span class="post-meta-item-icon">
@@ -303,92 +309,93 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="ʲôǵݹ飿">ʲô�ǵݹ飿</h2>
-<h2 id="ݹϵ">�ݹ�͵�����������ϵ</h2>
-<p>�ܶ�����ʵ����̫����ݹ�������ľ����𣬵���ָ��������ĳһ��������һֱѭ�� ����</p>
+        <h2 id="什么是递归">什么是递归？</h2>
+<h2 id="递归和迭代的区别联系">递归和迭代的区别联系</h2>
+<p>很多人其实都不太清楚递归与迭代的具体差别，迭代指的是你在某一个条件下一直循环 比如</p>
+<span id="more"></span>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">100</span>;i++&gt;)</span><br></pre></td></tr></table></figure>
-<p>ָ�ľ��ǵ���100�Σ�����100�ξ�ֹͣ�ˡ�</p>
-<p>���ݹ鲻һ�����ݹ�ָ���ǵ����Լ����������磺</p>
+<p>指的就是迭代100次，迭代100次就停止了。</p>
+<p>而递归不一样，递归指的是调用自己本身，例如：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">function1</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> m)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    n++;m++;</span><br><span class="line">    <span class="keyword">return</span> function1(n,m);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>�൱�����ظ��ĵ���function1�������������</p>
-<h2 id="ݹ">�ݹ�</h2>
-<p>�����֮����ֱ�ӻ��߼�ӵ����Լ����㷨������������Ӿ��Ǻ�������ú�����������һ�ֵݹ���á� ����ÿ���ݹ���̶���һ���ݹ麯�����ݹ麯�������ú������������������ĺ�����</p>
-<p>�ݹ��㷨���Խ�һ��<strong>���͵ĸ�������</strong>ת��Ϊһ��<strong>��ԭ�������ƵĹ�ģ��С������</strong>��⣬���������������޵���䶨�����޵ļ��ϣ�����<strong>��Ч���ٴ�����</strong>��ʹ����<strong>����׶�</strong>����<strong>ȱ����������Ч�ʵ�</strong>��<strong>�ռ����Ĵ�</strong>���������<strong>��ջ���</strong>��</p>
-<p><strong>���ǣ���Ҫע����ǣ�ÿ���ݹ麯���������зǵݹ鶨��ĳ�ʼֵ����ȷ���ݹ麯����ɼ��㡣</strong> <span id="more"></span></p>
-<h4 id="ٸ1">�ٸ�����1</h4>
-<p>�׳˺����� <span class="math display">\[
+<p>相当于是重复的调用function1这个函数本身。</p>
+<h2 id="递归">递归</h2>
+<p>简而言之就是直接或者间接调用自己的算法，最基本的例子就是函数里调用函数本身就是一种递归调用。 所以每个递归过程都有一个递归函数，递归函数就是用函数自身定义给出定义的函数。</p>
+<p>递归算法可以将一个<strong>大型的复杂问题</strong>转化为一个<strong>与原问题相似的规模较小的问题</strong>求解，其优势在于用有限的语句定义无限的集合，可以<strong>有效减少代码量</strong>，使程序<strong>简洁易懂</strong>；其<strong>缺点在于运行效率低</strong>，<strong>空间消耗大</strong>，容易造成<strong>堆栈溢出</strong>。</p>
+<p><strong>但是，需要注意的是，每个递归函数都必须有非递归定义的初始值，以确保递归函数完成计算。</strong> <!--more--></p>
+<h4 id="举个例子1">举个例子1</h4>
+<p>阶乘函数： <span class="math display">\[
 n!=1(n=0)\\
-��\\
+或\\
 n!=n(n-1)!(n&gt;0)
-\]</span> �൱���ǵݹ�ĵ���<span class="math inline">\(n*(n-1)\)</span> ������뵽�˵����������ǿ��Ծʹ�д��forѭ���������������ڽ����ǵݹ飬����дһ��Java���뿴������֮�������</p>
-<p><strong>�ݹ�ʵ�֣�</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">facterial</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (n == <span class="number">0</span>)</span><br><span class="line">   <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span> (n &lt; <span class="number">0</span>)</span><br><span class="line">   <span class="keyword">return</span> -<span class="number">1</span>;<span class="comment">//�����쳣���˳�</span></span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">   <span class="keyword">return</span> n * facterial(n - <span class="number">1</span>);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>����ʵ�֣�</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (n == <span class="number">0</span>)</span><br><span class="line">   <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span> (n &lt; <span class="number">0</span>)</span><br><span class="line">   <span class="keyword">return</span> -<span class="number">1</span>;<span class="comment">//�����쳣���˳�</span></span><br><span class="line">  <span class="keyword">else</span> &#123;</span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">int</span> i = n - <span class="number">1</span>; i &gt;= <span class="number">1</span>; i--) &#123;</span><br><span class="line">    n *= i;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> n;</span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<p>�Ƚ��㷨�ĺû�����һ��������㷨��ʱ�临�Ӷȣ����������Ƚ�һ�£� <strong>��������ģΪn�����⣺</strong></p>
+\]</span> 相当于是递归的调用<span class="math inline">\(n*(n-1)\)</span> 你可能想到了迭代，那我们可以就此写个for循环，但是我们现在讲的是递归，我们写一段Java代码看看他们之间的区别：</p>
+<p><strong>递归实现：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">facterial</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (n == <span class="number">0</span>)</span><br><span class="line">   <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span> (n &lt; <span class="number">0</span>)</span><br><span class="line">   <span class="keyword">return</span> -<span class="number">1</span>;<span class="comment">//发生异常，退出</span></span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">   <span class="keyword">return</span> n * facterial(n - <span class="number">1</span>);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>迭代实现：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (n == <span class="number">0</span>)</span><br><span class="line">   <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span> (n &lt; <span class="number">0</span>)</span><br><span class="line">   <span class="keyword">return</span> -<span class="number">1</span>;<span class="comment">//发生异常，退出</span></span><br><span class="line">  <span class="keyword">else</span> &#123;</span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">int</span> i = n - <span class="number">1</span>; i &gt;= <span class="number">1</span>; i--) &#123;</span><br><span class="line">    n *= i;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> n;</span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>比较算法的好坏我们一般就是用算法的时间复杂度，那我们来比较一下： <strong>针对问题规模为n的问题：</strong></p>
 <ul>
-<li>�ݹ�ʵ�֣�ʱ�临�Ӷ�O(n)���ռ临�Ӷ�O(n)��</li>
-<li>����ʵ�֣�ʱ�临�Ӷ�O(n)���ռ临�Ӷ�O(1)��</li>
+<li>递归实现：时间复杂度O(n)；空间复杂度O(n)。</li>
+<li>迭代实现：时间复杂度O(n)；空间复杂度O(1)。</li>
 </ul>
-<p>�ȽϿ�֪����ʵ�ֵ�ʱ�临�Ӷȵȼۣ��ռ临�Ӷȵݹ�ռ�õ��Դ�һ�£����Ǵ���Ľṹ�����ȵݹ������һЩ��</p>
-<h4 id="ٸ2">�ٸ�����2</h4>
-<p>��������һ��쳲��������е����� ���ĵݹ��������ģ� <span class="math display">\[
+<p>比较可知两种实现的时间复杂度等价，空间复杂度递归占用的略大一下，但是代码的结构清晰度递归更清晰一些。</p>
+<h4 id="举个例子2">举个例子2</h4>
+<p>我们来看一个斐波那契数列的例子 它的递归是这样的： <span class="math display">\[
 F(n)=1   (n=0,1)\\
-����\\
+或者\\
 F(n)=F(n-1)+F(n-2)    (n&gt;1)
 \]</span></p>
-<p>�������ô���ֱ�ʵ��һ�µݹ��������</p>
-<p><strong>�ݹ�ʵ�֣�</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">fibonacci</span><span class="params">(<span class="keyword">int</span> n )</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(n&lt;<span class="number">0</span>)</span><br><span class="line">   <span class="keyword">return</span> -<span class="number">1</span>; <span class="comment">//�����쳣���˳�</span></span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span>(n&lt;=<span class="number">1</span>)</span><br><span class="line">   <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">else</span> </span><br><span class="line">   <span class="keyword">return</span> fibonacci(n-<span class="number">1</span>)+fibonacci(n-<span class="number">2</span>);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<p>����ʵ�֣�</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">F</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(n&lt;<span class="number">0</span>)</span><br><span class="line">   <span class="keyword">return</span> -<span class="number">1</span>; <span class="comment">//�����쳣���˳�</span></span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span>(n&lt;=<span class="number">1</span>)</span><br><span class="line">   <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">else</span> &#123;</span><br><span class="line">   <span class="keyword">int</span> f0=<span class="number">1</span>,f1=<span class="number">1</span>,fx=<span class="number">0</span>;</span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    fx=f0+f1;</span><br><span class="line">    f0=f1;</span><br><span class="line">    f1=fx;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> fx;</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<p>�����Ƚ�һ������ʵ�ַ�����</p>
+<p>那我们用代码分别实现一下递归与迭代：</p>
+<p><strong>递归实现：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">fibonacci</span><span class="params">(<span class="keyword">int</span> n )</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(n&lt;<span class="number">0</span>)</span><br><span class="line">   <span class="keyword">return</span> -<span class="number">1</span>; <span class="comment">//发生异常，退出</span></span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span>(n&lt;=<span class="number">1</span>)</span><br><span class="line">   <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">else</span> </span><br><span class="line">   <span class="keyword">return</span> fibonacci(n-<span class="number">1</span>)+fibonacci(n-<span class="number">2</span>);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>迭代实现：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">F</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(n&lt;<span class="number">0</span>)</span><br><span class="line">   <span class="keyword">return</span> -<span class="number">1</span>; <span class="comment">//发生异常，退出</span></span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span>(n&lt;=<span class="number">1</span>)</span><br><span class="line">   <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">else</span> &#123;</span><br><span class="line">   <span class="keyword">int</span> f0=<span class="number">1</span>,f1=<span class="number">1</span>,fx=<span class="number">0</span>;</span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    fx=f0+f1;</span><br><span class="line">    f0=f1;</span><br><span class="line">    f1=fx;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> fx;</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>分析比较一下两种实现方法：</p>
 <ul>
-<li>�ݹ�ʵ�֣�ʱ�临�Ӷ�O(1.618��n�η�)���ռ临�Ӷ�O(n)��</li>
-<li>����ʵ�֣�ʱ�临�Ӷ�O(n)���ռ临�Ӷ�O(1)��</li>
+<li>递归实现：时间复杂度O(1.618的n次方)；空间复杂度O(n)。</li>
+<li>迭代实现：时间复杂度O(n)；空间复杂度O(1)。</li>
 </ul>
-<p>�ȽϿ�֪�ݹ�ʵ�ֵ�ʱ�临�Ӷ��Ѿ��ǳ����ˣ��ռ临�Ӷȵݹ�ռ�õ��Դ�һ�£����Ǵ���������ȵݹ������һЩ��</p>
-<p>������ʹ�������ݹ�ʵ�ֵĴ��������ô��룬��n=40���������һ�±�֪���ݹ�ʵ�ֵĺ�ʱ̫���ˣ�����Ȥ�Ŀ��Բ���һ�¡�</p>
-<h4 id="ݹż">�ݹ��Ż�</h4>
-<p>��Ϊʲô�ݹ鿴��ȥ��ôû�û�Ҫ�����أ�</p>
-<p>��ʵ�ݹ�Ч�����ܽϵ͵�ԭ�����������㣺</p>
+<p>比较可知递归实现的时间复杂度已经非常大了，空间复杂度递归占用的略大一下，但是代码的清晰度递归更清晰一些。</p>
+<p>而真正使用起来递归实现的代码是无用代码，用n=40这个数测试一下便知，递归实现的耗时太长了，有兴趣的可以测试一下。</p>
+<h4 id="递归优化">递归优化</h4>
+<p>那为什么递归看上去这么没用还要介绍呢？</p>
+<p>其实递归效率性能较低的原因有以下两点：</p>
 <ol type="1">
-<li><p>��ݹ���ù���ջ֧�֣��޷����⣩</p></li>
-<li><p>�п��ܳ����������ص����󣨱��뾡�����⣩</p></li>
+<li><p>需递归调用工作栈支持（无法避免）</p></li>
+<li><p>有可能出现子问题重叠现象（必须尽力避免）</p></li>
 </ol>
-<p>���ǵݹ���Խ�ʡ��������ʹ�ó���������������ʵ����һ����͵��~��</p>
+<p>但是递归可以节省代码量，使得程序更明了清楚（其实就是一部分偷懒~）</p>
 <hr>
-<h2 id="ʲôƿσ">ʲô�Ƿ��Σ�</h2>
-<p>������˼���ֶ���֮</p>
-<p>���β���(�ֳƷ��η�)�Ƕ���һ����ģΪn�����⣬��������������׵ؽ����ֱ�ӽ����������ֽ�Ϊk����ģ��С�������⣬��Щ������<strong>�������</strong>����<strong>ԭ������ʽ��ͬ</strong>�����β���<strong>�ݹ�ؽ���Щ������</strong>���ٽ�����������Ľ�<strong>�ϲ��õ�ԭ����Ľ�</strong>��</p>
-<p>���Ļ������裬�����ˣ�</p>
-<p>���η��Ļ������裺</p>
+<h2 id="什么是分治">什么是分治？</h2>
+<p>字面意思，分而治之</p>
+<p>分治策略(又称分治法)是对于一个规模为n的问题，若该问题可以容易地解决则直接解决，否则将其分解为k个规模较小的子问题，这些子问题<strong>互相独立</strong>且与<strong>原问题形式相同</strong>。分治策略<strong>递归地解这些子问题</strong>，再将各个子问题的解<strong>合并得到原问题的解</strong>。</p>
+<p>它的基本步骤，包括了：</p>
+<p>分治法的基本步骤：</p>
 <ol type="1">
-<li>�ֽ⣺��ԭ����ֽ�Ϊ���ɸ���ģ��С���໥��������ԭ������ʽ��ͬ�������⣻</li>
-<li>��������������ģ��С�����׽����ֱ�ӽ⣬����ݹ�ؽ⣻</li>
-<li>�ϲ�������������Ľ�ϲ�Ϊԭ����Ľ⡣</li>
+<li>分解：将原问题分解为若干个规模较小、相互独立、与原问题形式相同的子问题；</li>
+<li>解决：若子问题规模较小而容易解决则直接解，否则递归地解；</li>
+<li>合并：将各子问题的解合并为原问题的解。</li>
 </ol>
-<p>�ϲ��Ƿ��η��Ĺؼ����ڣ���Ҫ����������������</p>
-<p>���η�Ҳ����ɶ���ⶼ���� ��������������</p>
+<p>合并是分治法的关键所在，需要具体问题具体分析。</p>
+<p>分治法也不是啥问题都能用 它有适用条件：</p>
 <ol type="1">
-<li>��������С��һ���̶ȿ������׵ؽ���� ���������ھ�����������ܹ����㡣</li>
-<li>��������Էֽ�Ϊ���ɸ���ģ��С����ͬ�����⣬��������������ӽṹ���ʣ� ��������Ӧ�÷��η���ǰ�ᣬҲ�Ǵ���������������ģ���ӳ�˵ݹ�˼���Ӧ�á�</li>
-<li>���ø�����ֽ������������Ժϲ�Ϊ������Ľ⣻ �ܷ����÷��η���ȫȡ���ڸ�������<strong>���߱�����1��2�����߱�����3�����Կ��Ƕ�̬�滮����̰�ķ�</strong>��</li>
-<li>������ĸ����������Ƕ����ģ����������������⡣ �������漰���η���Ч�ʡ����������ⲻ�Ƕ����ģ�����η���Ҫ�ܶ಻��Ҫ�Ĺ�����</li>
+<li>该问题缩小到一定程度可以容易地解决； 该条件对于绝大多数问题能够满足。</li>
+<li>该问题可以分解为若干个规模较小的相同子问题，即问题具有最优子结构性质； 该条件是应用分治法的前提，也是大多数问题可以满足的，反映了递归思想的应用。</li>
+<li>利用该问题分解出的子问题可以合并为该问题的解； 能否利用分治法完全取决于该条件。<strong>若具备条件1、2而不具备条件3，可以考虑动态规划法或贪心法</strong>。</li>
+<li>该问题的各个子问题是独立的，不包含公共子问题。 该条件涉及分治法的效率。若各子问题不是独立的，则分治法需要很多不必要的工作。</li>
 </ol>
-<p><strong>�Լ������β��������͵ݹ��㷨ͬʱʹ�ã���˵ݹ��㷨��ʱ�临�Ӷȷ����������ڷ��η���</strong></p>
-<p>������ô��ԭ�������������Ӱɡ�</p>
-<h4 id="section">����1</h4>
-<p>���ֲ��� ����n��Ԫ����ɵ�<strong>��������</strong>{0:n-1]������n��Ԫ�����ҵ��ض�Ԫ��x����ʹ��˳����ҷ��������µ�ʱ�临�Ӷ�ΪO(n)�� ������������������ö��ֲ��ҷ������������½�ʱ�临�Ӷȼ��ٵ�O(log n)��</p>
-<p><strong>���ֲ��ҷ��Ļ���˼���ǣ�</strong></p>
-<p>��n��Ԫ�طֳ����룬ȡ<span class="math inline">\(a[n/2]\)</span>��<span class="math inline">\(x\)</span>�Ƚϣ�</p>
+<p><strong>以及，分治策略往往和递归算法同时使用，因此递归算法的时间复杂度分析可适用于分治法。</strong></p>
+<p>搞了这么多原理，来讲个例子吧、</p>
+<h4 id="例子1">例子1</h4>
+<p>二分查找 给定n个元素组成的<strong>有序序列</strong>{0:n-1]，在这n个元素中找到特定元素x。若使用顺序查找法，最坏情况下的时间复杂度为O(n)； 利用有序的条件，采用二分查找法可以在最坏情况下将时间复杂度减少到O(log n)。</p>
+<p><strong>二分查找法的基本思想是：</strong></p>
+<p>将n个元素分成两半，取<span class="math inline">\(a[n/2]\)</span>与<span class="math inline">\(x\)</span>比较；</p>
 <ol type="1">
-<li>��<span class="math inline">\(x = a[n/2]\)</span>�����ҵ���ӦԪ�أ����ҽ�����</li>
-<li>��<span class="math inline">\(x &lt;a[n/2]\)</span>�������������벿�ּ������ң��������Ұ벿�ּ������ң�</li>
-<li>�޷��ٻ���ʱ������ʧ�ܣ�</li>
+<li>若<span class="math inline">\(x = a[n/2]\)</span>，则找到对应元素，查找结束；</li>
+<li>若<span class="math inline">\(x &lt;a[n/2]\)</span>，则在数组的左半部分继续查找；否则在右半部分继续查找；</li>
+<li>无法再划分时，查找失败；</li>
 </ol>
-<p>��������</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> x,<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> low = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> high = n - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(low &lt;= high)&#123;</span><br><span class="line">        <span class="keyword">int</span> middle = (low + high) / <span class="number">2</span>;<span class="comment">//ȡһ��</span></span><br><span class="line">        <span class="keyword">if</span>(a[middle] == x)<span class="comment">//�ҵ�ֵ���ҷ���</span></span><br><span class="line">            <span class="keyword">return</span> middle;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(x &lt; a[middle])<span class="comment">//������м���С�������¶����µ�һ���Ͻ����м������Ԫ��</span></span><br><span class="line">            high = middle - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            low = middle + <span class="number">1</span>;<span class="comment">//������м����󣬾����¶����µ�һ���½����м����ұ�Ԫ��</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>代码如下</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> x,<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> low = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> high = n - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(low &lt;= high)&#123;</span><br><span class="line">        <span class="keyword">int</span> middle = (low + high) / <span class="number">2</span>;<span class="comment">//取一半</span></span><br><span class="line">        <span class="keyword">if</span>(a[middle] == x)<span class="comment">//找到值并且返回</span></span><br><span class="line">            <span class="keyword">return</span> middle;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(x &lt; a[middle])<span class="comment">//如果比中间数小，就重新定义新的一半上界是中间数左边元素</span></span><br><span class="line">            high = middle - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            low = middle + <span class="number">1</span>;<span class="comment">//如果比中间数大，就重新定义新的一半下界是中间数右边元素</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -426,7 +433,7 @@ F(n)=F(n-1)+F(n-2)    (n&gt;1)
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://wangzihan20.github.io/2022/05/10/dpt1/" title="�㷨����|���εݹ�">https://wangzihan20.github.io/2022/05/10/dpt1/</a>
+      <a href="https://wangzihan20.github.io/2022/05/10/dpt1/" title="算法讲解|分治递归">https://wangzihan20.github.io/2022/05/10/dpt1/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -452,7 +459,7 @@ F(n)=F(n-1)+F(n-2)    (n&gt;1)
 </div>
 
           <div class="post-tags">
-              <a href="/tags/%EF%BF%BD%E3%B7%A8%EF%BF%BD%EF%BF%BD%EF%BF%BD/" rel="tag"><i class="fa fa-tag"></i> �㷨���</a>
+              <a href="/tags/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1/" rel="tag"><i class="fa fa-tag"></i> 算法设计</a>
           </div>
 
         
@@ -499,13 +506,13 @@ F(n)=F(n-1)+F(n-2)    (n&gt;1)
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">169k</span>
+    <span title="站点总字数">168k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:34</span>
+    <span title="站点阅读时长">2:33</span>
   </span>
 </div>
 
